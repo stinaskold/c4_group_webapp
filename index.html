@@ -14,19 +14,66 @@
   <body>
     <main class="container-fluid">
       <div class="page-header nav">
-        <h2 class="text-center"></h2>
+        <img src="img/Volunteerlink_logo_farg.png" alt="logo" class="logo pull-left">
+        <ul class="nav">
+            <li role="presentation" class="dropdown">
+              <a class="dropdown-toggle pull-right" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+              <span class="glyphicon glyphicon-align-justify"></span>
+              </a>
+              <ul class="dropdown-menu pull-right">
+                <li role="presentation" class="main-nav-list"><a href="#">Home</a></li>
+                <li role="presentation" class="main-nav-list"><a href="#">About us</a></li>
+                <li role="presentation" class="main-nav-list"><a href="#">Contact us</a></li>
+                <li role="presentation" class="main-nav-list"><a href="#">For organizations</a></li>
+              </ul>
+            </li>
+        </ul>
       </div>
-
       <div class="main-content container">
         <div class="row">
-
+          <h1 class="">The portal for volunteer work, connecting organizations and volunteer workers!</h1>
+          <div class="newsfeed-form">
+            <header class="newsfeed-heading"><h2>News feed</h2></header>
+            <article class="mission-post">
+              <header class="mission-title"><h3>Title of mission</h3></header>
+                <li class="mission-sub-title"><h4>Organization:</h4></li>
+                <li class="mission-sub-title"><h4>Field of work:</h4></li>
+                <li class="mission-sub-title"><h4>About this mission:</h4></li>
+              <footer>
+                <a href=""><h4>Read more and apply</h4></a>
+              </footer>
+            </article>
+            <article class="mission-post">
+              <header class="mission-title"><h3>Title of mission</h3></header>
+                <li class="mission-sub-title"><h4>Organization:</h4></li>
+                <li class="mission-sub-title"><h4>Field of work:<h4></li>
+                <li class="mission-sub-title"><h4>About this mission:</h4></li>
+              <footer>
+                <a href=""><h4>Read more and apply</h4></a>
+              </footer>
+            </article>
+            <button type="submit" class="btn btn-default">See all missions</button> 
+            </div>
+          </div>
+          <div class="login-form">
+            <h3>Register an account, it's free!</h3>
+            <p>Create an account to be able to get email notifications, chat with other volunteers and more</p>
+            <button type="submit" class="btn btn-default">Register now</button>
+            <form>
+              <div class="form-group">
+                <label for "username-input"><h3>Login:</h3></label>
+                <input type="email" class="form-control" id="username-input" placeholder="User name">
+              </div>
+              <div class="form-group">
+                <input type="password" class="form-control" id="password-input" placeholder="Password">
+              </div>
+              <button type="submit" class="btn btn-default">Sign in</button>
+            </form>
+          </div>
         </div>
       </div>
-
       <footer>
-        <p>
-
-        </p>
+        <p>&copy;2016 Volunteer Link</p>
       </footer>
     </main>
     <script src="js/main.js"></script>

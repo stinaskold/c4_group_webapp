@@ -1,13 +1,72 @@
 /* Import Fonts */
 
-
-/* Color Styles */
+@import url(https://fonts.googleapis.com/css?family=Merriweather:400,700,300,900|Merriweather+Sans:400,300,700,800);
 
 
 /* General */
 
+/* Font styles */
+
+h1 {
+	font-family: 'Merriweather', serif;
+	font-weight: 700;
+	font-size: 20px;
+}
+
+h2 {
+	font-family: 'Merriweather Sans', sans-serif;;
+	font-weight: 900;
+	font-size: 18px;
+}
+
+h3 {
+	font-family: 'Merriweather', serif;
+	font-weight: 700;
+	font-size: 14px;
+}
+
+h4 {
+	font-family: 'Merriweather', serif;
+	font-weight: 700;
+	font-size: 12px;
+}
+
+p {
+	font-family: 'Merriweather', serif;
+	font-weight: 400;
+	font-size: 10px;
+
+}
+
+
+/* Color Styles */
+
 
 /* Header */
+
+.logo {
+ 	width: 200px;
+ 	heigth: auto;
+}
+
+div.page-header.nav {
+	margin: 30px 0 0 0;
+	border: none;
+}
+
+.glyphicon.glyphicon-align-justify {
+    font-size: 30px;
+    color: #333333;
+}
+
+a.dropdown-toggle.pull-right {
+	padding: 0;
+}
+
+
+.main-nav-list a.active, .main-nav-list a.active  {
+	background-color: #333333;
+}
 
 
 /* Landingpage */
