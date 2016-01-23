@@ -5,6 +5,12 @@
 
 /* General */
 
+html, body {
+  height:100%;
+  margin:0;
+  padding:0;
+}
+
 /* Font styles */
 
 h1 {
@@ -38,30 +44,46 @@ p {
 
 }
 
+span {
+	font-family: 'Merriweather', serif;
+	font-weight: 700;
+	font-size: 12px;
+}
+
+.btn {
+	font-family: 'Merriweather', serif;
+	font-weight: 700;
+	font-size: 10px;
+}
+
 /* Link Styles */
 
-a {
-  color: #000;
-  text-decoration: none !important;
-}
+a {color: #000; text-decoration: none !important;}
 
-a:visited {
-  color: #000;
-  text-decoration: none !important;
-}
+a:visited {color: #000; text-decoration: none !important;}
 
-a:hover {
-  color: #000;
-  text-decoration: none !important;
-}
+a:hover {color: #000; text-decoration: none !important;}
 
-a:active {
-  color: #000;
-  text-decoration: none !important;
-}
-
+a:active {color: #000; text-decoration: none !important;}
 
 /* Color Styles */
+
+		/* Logged-in page */
+		.logged-in-page {background-color: #282828;}
+
+		.logged-in-page-main h1 {color: #dadfe1;}
+
+		.logged-in-page-main h2 {color: #ffa500;}
+
+		.mission-panel {background-color: #ecf0f1;}
+
+		span {color: #bdc3c7;}
+
+		.field-btn, .country-btn {background-color: #3d3d3d; color: #dadfe1; border-color: #3d3d3d !important;}
+
+		.read-more-btn {background-color: #ffa500; border-color: #fff; color: #fff;}
+
+		.apply-btn {background-color:#282828; border-color: #fff; color: #fff;}
 
 
 /* Header */
@@ -101,6 +123,32 @@ a.dropdown-toggle.pull-right {
 
 
 /* Logged-in page */
+
+.newest-missions-header {
+	margin: 15px 0;
+	padding: 10px 0;
+}
+
+.newest-missions-h1, .newest-missions-filter {padding: 0;}
+
+.logged-in-page-main h1 {
+	margin: 0;
+}
+
+.logged-in-page-main h2 {
+	margin-top: 0;
+}
+
+.panel {
+	border-radius: 10px;
+}
+
+.read-more-btn, .apply-btn, .field-btn, .country-btn {
+	margin-right: 5px;
+	border: solid 2px;
+	border-radius: 10px;
+}
+
 
 
 /* Footer */
