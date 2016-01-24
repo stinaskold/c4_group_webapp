@@ -8,6 +8,7 @@
     <link rel="stylesheet" media="screen" href="css/main.css">
     <script src="js/jquery-1.11.3.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
+    <script src="https://cdn.firebase.com/js/client/2.4.0/firebase.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="C4_Web_App_Group">
   </head>
@@ -30,6 +31,17 @@
             </li>
         </ul>
       </div>
+
+      <label for="" style="color: white;">Field</label>
+      <input type="text" class="field">
+      <label for="" style="color: white;">Country</label>
+      <input type="text" class="country">
+      <label for="" style="color: white;">Header</label>
+      <input type="text" class="header">
+      <label for="" style="color: white;">Message</label>
+      <input type="text" class="message">
+      <button id="send-message">Send message!</button>
+      <div class="messages"></div>
 
       <div class="logged-in-main container">
         <div class="row">
