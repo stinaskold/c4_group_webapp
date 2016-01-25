@@ -1,24 +1,3 @@
-// Add reference to Firebase database
-var myFireBaseRef = new Firebase("https://fro15c4webappgroup.firebaseio.com/");
-
-// Add a new mission to Firebase database as soon as organization sends a message
-// after click on "send-message" button
-document.querySelector("#send-message").addEventListener("click",function(){
-    var field, country, header, message;
-    field = document.querySelector(".field").value;
-    country = document.querySelector(".country").value;
-    header = document.querySelector(".header").value;
-    message = document.querySelector(".message").value;
-
-    addMissionToDatabase(field, country, header, message);
-});
-
-// Function to add a newly created mission to Firebase database
-function addMissionToDatabase(field, country, header, message){
-    myFireBaseRef.child('missioninfo').push({field: field, country: country, header: header, message: message});
-    window.location.reload();
-}
-
 // Collection of all existing missions
 var missionCollection;
 missionCollection = [];
