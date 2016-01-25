@@ -13,6 +13,10 @@ html, body {
 
 /* Font styles */
 
+body {
+  font-family: 'Merriweather', serif;
+}
+
 h1 {
 	font-family: 'Merriweather', serif;
 	font-weight: 700;
@@ -85,6 +89,12 @@ a:active {color: #000; text-decoration: none !important;}
 
 		.apply-btn {background-color:#282828; border-color: #fff; color: #fff;}
 
+    /*  Organisations-page   */
+
+    .org-messages li {
+      background-color: #ecf0f1;
+    }
+
 
 /* Header */
 
@@ -149,6 +159,49 @@ a.dropdown-toggle.pull-right {
 	border-radius: 10px;
 }
 
+/* Organisation page   */
+
+.org-main {
+  margin-top: 70px;
+}
+
+.org-main button {
+  margin-bottom: 20px;
+  margin-right: 5px;
+}
+
+.org-main label {
+  width: 80px;
+  font-weight: lighter;
+}
+
+.textarea-message label {
+  vertical-align: top;
+}
+
+.org-main input, .org-main textarea {
+  margin-bottom: 15px;
+  border-radius: 5px;
+  border: none;
+  min-width: 100%;
+  padding: 10px;
+}
+
+.org-main ul {
+  padding: 0;
+}
+
+.org-main li {
+  list-style-type: none;
+}
+
+.org-messages li {
+  padding: 20px;
+}
+
+.message-sent {
+  color: #fff;
+}
 
 
 /* Footer */
