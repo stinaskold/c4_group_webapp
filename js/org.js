@@ -35,19 +35,21 @@ $("#create-message").click(function() {
   $("#org-form-div").html(html);
 
   document.querySelector("#send-message").addEventListener("click",function(){
-      var field, country, header, message;
+      var organisation, email, field, country, header, message;
+      organisation = document.querySelector(".organisation").value;
+      email = document.querySelector(".email").value;
       field = document.querySelector(".field").value;
       country = document.querySelector(".country").value;
       header = document.querySelector(".header").value;
       message = document.querySelector(".message").value;
 
-      addMissionToDatabase(field, country, header, message);
+      addMissionToDatabase(organisation, email, field, country, header, message);
 
       $("#org-form-div").html("<h3 class='message-sent col-xs-12 col-sm-12 col-md-6 col-md-offset-3'>Your message was sent.</h3>");
   });
 });
 
-function addMissionToDatabase(field, country, header, message){
-    myFireBaseRef.child('missioninfo').push({field: field, country: country, header: header, message: message});
+function addMissionToDatabase(organisation, email, field, country, header, message){
+    myFireBaseRef.child('missioninfo').push({organisation: organisation, email: email, field: field, country: country, header: header, message: message});
     window.location.reload();
 }
