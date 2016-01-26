@@ -20,7 +20,9 @@ body {
 h1 {
 	font-family: 'Merriweather', serif;
 	font-weight: 700;
-	font-size: 20px;
+	font-size: 16px;
+	color: white;
+
 }
 
 h2 {
@@ -73,11 +75,11 @@ a:active {color: #000; text-decoration: none !important;}
 /* Color Styles */
 
 		/* Logged-in page */
-		.logged-in-page {background-color: #282828;}
+		.logged-in-page {background-color: #333333;}
 
 		.logged-in-page-main h1 {color: #dadfe1;}
 
-		.logged-in-page-main h2 {color: #ffa500;}
+		.logged-in-page-main h2 {color: #f89c44;}
 
 		.mission-panel {background-color: #ecf0f1;}
 
@@ -85,9 +87,16 @@ a:active {color: #000; text-decoration: none !important;}
 
 		.field-btn, .country-btn {background-color: #3d3d3d; color: #dadfe1; border-color: #3d3d3d !important;}
 
-		.read-more-btn {background-color: #ffa500; border-color: #fff; color: #fff;}
+		.read-more-btn {background-color: #f89c44; border-color: #fff; color: #fff;}
 
-		.apply-btn {background-color:#282828; border-color: #fff; color: #fff;}
+		.apply-btn {background-color:#333333; border-color: #fff; color: #fff;}
+
+
+		/* Landing page */
+
+		div.page-header {
+			background-color: white;
+		}
 
     /*  Organisations-page   */
 
@@ -96,7 +105,7 @@ a:active {color: #000; text-decoration: none !important;}
     }
 
 
-/* Header */
+/* Main header */
 
 .logo {
  	width: 200px;
@@ -104,8 +113,13 @@ a:active {color: #000; text-decoration: none !important;}
 }
 
 div.page-header.nav {
-	margin: 30px 0 0 0;
+	margin: 0;
+	padding: 20px;
 	border: none;
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
 }
 
 .glyphicon.glyphicon-align-justify {
@@ -125,11 +139,53 @@ a.dropdown-toggle.pull-right {
 
 /* Landingpage */
 
+.newsfeed-form {
+	background-color:rgba(255,255,255,0.8);
+	border-radius: 10px;
+	padding: 10px;
+	margin: 70px 20px;
+}
+
+.all-missions-btn {
+	background-color:#333333; border: 2px solid #fff; color: #fff;
+}
+
+.main-content {
+	margin: 80px 0px;
+
+}
+
+.landing-page{
+		background: url("../img/background.jpg"), #333333;
+		background-repeat: no-repeat;
+		background-size: cover;
+		background-position: -220px 180px;
+}
+
+.landing-page h1 {
+			text-align: center;
+			line-height: 20px;
+		}
+
 
 /* Register Form */
 
 
 /* Log-in Form */
+
+.login-form {
+	background-color: #333333;
+	color: white;
+	border: 3px solid white;
+	border-radius: 10px;
+	padding: 20px;
+	margin: 40px 0 0 0;
+}
+
+
+.register-btn, .sign-in-btn {
+	background-color: #f89c44; border: 2px solid #fff; color: #fff;
+}
 
 
 /* Logged-in page */
@@ -205,6 +261,13 @@ a.dropdown-toggle.pull-right {
 
 
 /* Footer */
+
+
+footer p {
+	color: white;
+	text-align: center;
+	padding: 0 0 10px 0;
+}
 
 
 /* Media Queries Tablet */

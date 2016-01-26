@@ -1,4 +1,4 @@
-
+var myFireBaseRef = new Firebase("https://fro15c4webappgroup.firebaseio.com/");
 
 $("#show-messages").click(function() {
   $("#org-form-div").empty();
@@ -31,7 +31,7 @@ $("#create-message").click(function() {
   $("#org-form-div").html(html);
 
   document.querySelector("#send-message").addEventListener("click",function(){
-      $("#org-form-div").html("<h3 class='message-sent col-xs-12 col-sm-12 col-md-6 col-md-offset-3'>Your message was sent.</h3>");
+      //$("#org-form-div").html("<h3 class='message-sent col-xs-12 col-sm-12 col-md-6 col-md-offset-3'>Your message was sent.</h3>");
 
       var field, country, header, message;
       field = document.querySelector(".field").value;
@@ -40,6 +40,8 @@ $("#create-message").click(function() {
       message = document.querySelector(".message").value;
 
       addMissionToDatabase(field, country, header, message);
+
+      $("#org-form-div").html("<h3 class='message-sent col-xs-12 col-sm-12 col-md-6 col-md-offset-3'>Your message was sent.</h3>");
   });
 });
 
