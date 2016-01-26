@@ -131,6 +131,13 @@ function addFieldAndCountryList() {
     addMissions();
     //e.preventDefault();
   });
+
+  $("#see-all-missions-btn").on('click',function (e) {
+    //e.stopImmediatePropagation();
+    document.getElementById('missions-list').innerHTML = "";
+    addMissions();
+    //e.preventDefault();
+  });
 }
 
 

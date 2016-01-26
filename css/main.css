@@ -86,7 +86,7 @@ a:active {color: #000; text-decoration: none !important;}
 
 		span {color: #bdc3c7;}
 
-		.field-btn, .country-btn {background-color: #3d3d3d; color: #dadfe1; border-color: #3d3d3d !important;}
+		.field-btn, .country-btn, .see-all-btn {background-color: #3d3d3d; color: #dadfe1; border-color: #3d3d3d !important;}
 
 		.read-more-btn {background-color: #f89c44; border-color: #fff; color: #fff;}
 
@@ -115,17 +115,17 @@ a:active {color: #000; text-decoration: none !important;}
 }
 
 div.container.page-header {
-	margin: 0 0 0 0; 
+	margin: 0 0 0 0;
 	padding: 0 0 0 0;
 	background-color: white;
-	
+
 }
 
 div.navbar.navbar-default {
-	margin: 0 0 0 0; 
+	margin: 0 0 0 0;
 	padding: 0 0 0 0;
 	background-color: white;
-	
+
 }
 
 button.navbar-toggle {
@@ -149,7 +149,7 @@ ul.nav li a {
 	border-radius: 10px;
 	padding: 10px;
 	margin-top: 50px;
-	
+
 }
 
 .all-missions-btn {
@@ -216,7 +216,7 @@ ul.nav li a {
 	border-radius: 10px;
 }
 
-.read-more-btn, .apply-btn, .field-btn, .country-btn {
+.read-more-btn, .apply-btn, .field-btn, .country-btn, .all-missions-btn {
 	margin-right: 5px;
 	border: solid 2px;
 	border-radius: 10px;
