@@ -179,7 +179,7 @@ ul.nav li a {
 
 /* Log-in Form */
 
-.login-form {
+.login-form, .registration-form {
 	max-width: 260px;
 	background-color: #333333;
 	color: white;
@@ -190,8 +190,9 @@ ul.nav li a {
 }
 
 
-.register-btn, .sign-in-btn {
+.register-btn, .sign-in-btn, .confirm-registration-btn {
 	background-color: #f89c44; border: 2px solid #fff; color: #fff;
+	margin-top: 10px;
 }
 
 
