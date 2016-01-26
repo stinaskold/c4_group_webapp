@@ -105,6 +105,10 @@ a:active {color: #000; text-decoration: none !important;}
       background-color: #ecf0f1;
     }
 
+    .edit {background-color: #f89c44; border-color: #fff; color: #fff;}
+
+    .delete {background-color:#333333; border-color: #fff; color: #fff;}
+
 
 /* Main header */
 
@@ -266,7 +270,21 @@ ul.nav li a {
   color: #fff;
 }
 
+.edit, .delete {
+  border: solid 2px;
+  border-radius: 10px;
+}
 
+/*  Organisation - start page  */
+
+.org-start {
+  margin-top: 40px;
+  background-color: #fff;
+}
+
+#dialog-register {
+  margin-top: 40px;
+}
 /* Footer */
 
 

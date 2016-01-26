@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Fro15 C4 Web App Group</title>
+    <link rel="stylesheet" media="screen" href="css/normalize.css">
+    <link rel="stylesheet" media="screen" href="css/bootstrap.min.css">
+    <link rel="stylesheet" media="screen" href="css/main.css">
+    <script src="js/jquery-1.11.3.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="https://cdn.firebase.com/js/client/2.4.0/firebase.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="C4_Web_App_Group">
+  </head>
+  <body class="logged-in-page">
+
+   <div class="navbar navbar-default">
+        <div class="container page-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <img src="img/Volunteerlink_logo_farg.png" alt="logo" class="logo"></img>
+          <div class="collapse navbar-collapse">
+            <ul class="nav navbar-nav navbar-right">
+            <Li><a href="#">Home</a></li>
+            <Li><a href="#">About us</a></li>
+            <Li><a href="#">Contact us</a></li>
+            <Li><a href="#">For organizations</a></li>
+          </ul>
+          </div>
+        </div>
+      </div>
+
+      <main class="logged-in-page-main container-fluid">
+      <div class="org-start container">
+
+        <div id="dialog-register" title="Register new user">
+      <form>
+          <fieldset>
+              <label for="name">Email</label>
+              <input type="text" name="email" id="register-email" class="text" />
+              <label for="password">Password</label>
+              <input type="password" name="password" id="register-password" value="" class="text" />
+              <button id="register-button">Register now</button>
+          </fieldset>
+      </form>
+  </div>
+
+  <div id="dialog-login" title="Login user">
+      <form>
+          <fieldset>
+              <label for="name">Email</label>
+              <input type="text" name="email" id="login-email" class="text" />
+              <label for="password">Password</label>
+              <input type="password" name="password" id="login-password" value="" class="text" />
+          </fieldset>
+      </form>
+  </div>
+
+      <footer>
+        <p>&copy;2016 Volunteer Link</p>
+      </footer>
+
+    </main>
+    <script src="js/users.js"></script>
+    <script src="js/org.js"></script>
+
+
+  </body>
+</html>
