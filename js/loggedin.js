@@ -9,13 +9,13 @@ myFireBaseMissionInfo.once("value", function(allMissionsSnapshot) {
 
     allMissionsSnapshot.forEach(function(missionSnapshot) {
     var key = missionSnapshot.key();
-    var org = missionSnapshot.child("organisation").val();
-    var em = missionSnapshot.child("email").val();
+    var o = missionSnapshot.child("organisation").val();
+    var e = missionSnapshot.child("email").val();
     var f = missionSnapshot.child("field").val();
     var c = missionSnapshot.child("country").val();
     var h = missionSnapshot.child("header").val();
     var m = missionSnapshot.child("message").val();
-    missionCollection.push(addObject(org,em,f,c,h,m));
+    missionCollection.push(addObject(o,e,f,c,h,m));
   });
   missionCollection = missionCollection.reverse();
   addFieldAndCountryList();
@@ -182,8 +182,8 @@ function addMissions() {
       panelBody.appendChild(missionText);
       missionText.innerHTML = message;
       panelBody.appendChild(missionButtonsDiv);
-      missionButtonsDiv.appendChild(readMoreBtn);
-      readMoreBtn.innerHTML = "Read more";
+      //missionButtonsDiv.appendChild(readMoreBtn);
+      //readMoreBtn.innerHTML = "Read more";
       missionButtonsDiv.appendChild(applyBtn);
       applyBtn.innerHTML = "Apply";
     }
@@ -223,35 +223,37 @@ function addMissions() {
       missionText.innerHTML = message;
 
       var html = '<div class="org-main col-xs-12 col-sm-12 col-md-8 col-md-offset-2" style="margin-top:10px;">' +
-                   '<ul>' +
-                     '<li><label for="" style="color: white;">Your Name</label><br>' +
-                     '<input type="text" class="name"></li>' +
-                     '<li><label for="" style="color: white;">Your Email</label><br>' +
-                     '<input type="text" class="email"></li>' +
-                     '<li><label for="" style="color: white;">Subject</label><br>' +
-                     '<input type="text" class="header"></li>' +
-                     '<li class="textarea-message"><label for="" style="color: white;">Message</label><br>' +
-                     '<textarea class="message" rows="5"></textarea></li>' +
-                     '<li><button class="btn btn-lg btn-default" id="send-message-to-apply"><a href="">Send message</a></button></li>' +
-                   '</ul>' +
+                   '<form method="post" id="applyFormID" class="applyFormClass">' +
+                     '<label for="" style="color: white;">Your Name</label><br>' +
+                     '<input type="text" class="name" name="name" id="name" placeholder="Name"><br>' +
+                     '<label for="" style="color: white;">Your Email</label><br>' +
+                     '<input type="text" class="email" name="email" id="email" placeholder="Email"><br>' +
+                     '<label for="" style="color: white;">Subject</label><br>' +
+                     '<input type="text" class="header"><br>' +
+                     '<label for="" class="textarea-message" style="color: white;">Message</label><br>' +
+                     '<textarea class="message" rows="5"></textarea><br>' +
+                     '<button id="send-message-to-apply" class="btn btn-lg btn-default"><a href="#" target="_blank" class="submit" id="test">Send message</a></button>' +
+                   '</form>' +
                  '<div class="messages"></div>' +
-                 '</div>';
+                '</div>';
 
       var messageFormDiv = document.createElement('div');
       messageFormDiv.innerHTML = html;
       missionsListDiv.appendChild(messageFormDiv);
 
       $("#send-message-to-apply").on('click',function (e) {
+        e.preventDefault();
 
-          var name, email, header, message;
+          /* var name, email, header, message;
           name = document.querySelector(".name").value;
           email = document.querySelector(".email").value;
           header = document.querySelector(".header").value;
-          message = document.querySelector(".message").value;
+          message = document.querySelector(".message").value; */
 
-          //this.setAttribbute('href','mailto:' + orgEmailOfMissionClicked + '?subject=' + header + '&body=' + message);
+          $("#applyFormID").attr('action', 'mailto:' + orgEmailOfMissionClicked);
+
           $(".org-main").empty();
-          $(".org-main").html("<h3 class='message-sent col-xs-12 col-sm-12 col-md-6 col-md-offset-3'>Your message was sent.</h3>");
+          $(".org-main").html("<h3 class='message-sent col-xs-12 col-sm-12 col-md-8 col-md-offset-2'>Your message was sent.</h3>");
       });
 
     });
@@ -266,13 +268,13 @@ function addMissions() {
 
         allMissionsSnapshot.forEach(function(missionSnapshot) {
           var key = missionSnapshot.key();
-          var org = missionSnapshot.child("organisation").val();
-          var em = missionSnapshot.child("email").val();
+          var o = missionSnapshot.child("organisation").val();
+          var e = missionSnapshot.child("email").val();
           var f = missionSnapshot.child("field").val();
           var c = missionSnapshot.child("country").val();
           var h = missionSnapshot.child("header").val();
           var m = missionSnapshot.child("message").val();
-          missionCollection.push(addObject(org,em,f,c,h,m));
+          missionCollection.push(addObject(o,e,f,c,h,m));
       });
       missionCollection = missionCollection.reverse();
     });
