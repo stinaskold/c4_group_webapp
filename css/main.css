@@ -35,7 +35,7 @@ h2 {
 h3 {
 	font-family: 'Merriweather', serif;
 	font-weight: 700;
-	font-size: 14px;
+	font-size: 13px;
 }
 
 h4 {
@@ -97,6 +97,7 @@ a:active {color: #000; text-decoration: none !important;}
 
 		div.page-header {
 			background-color: white;
+			
 		}
 
     /*  Organisations-page   */
@@ -118,7 +119,7 @@ a:active {color: #000; text-decoration: none !important;}
  	padding: 10px;
 }
 
-div.container.page-header {
+div.page-header {
 	margin: 0 0 0 0;
 	padding: 0 0 0 0;
 	background-color: white;
@@ -129,6 +130,7 @@ div.navbar.navbar-default {
 	margin: 0 0 0 0;
 	padding: 0 0 0 0;
 	background-color: white;
+	
 
 }
 
@@ -139,8 +141,8 @@ button.navbar-toggle {
 
 }
 
-ul.nav li a {
-	padding-left: 30px;
+ul.nav li {
+	padding-left: 15px;
 }
 
 
@@ -195,7 +197,7 @@ ul.nav li a {
 
 .register-btn, .sign-in-btn, .confirm-registration-btn {
 	background-color: #f89c44; border: 2px solid #fff; color: #fff;
-	margin-top: 10px;
+	margin-top: 15px;
 }
 
 
@@ -342,12 +344,11 @@ footer p {
 
 /* Landingpage */
 
-.landing-page{
+	.landing-page {
 		background: url("../img/background.jpg"), #333333;
 		background-repeat: no-repeat;
 		background-size: 2000px;
 		background-position: -800px 115px;
-		
 	}
 
 	.landing-page h1 {
@@ -356,8 +357,7 @@ footer p {
 			padding: 10px 70px 20px 70px;
 			font-size: 22px;
 			margin: 10px;
-		
-		}
+	}
 
 
 	.landing-heading {
@@ -369,122 +369,130 @@ footer p {
 		background-color:rgba(255,255,255,0.8);
 		border-radius: 10px;
 		padding: 10px;
-		margin: 20px; 
-}
+		margin: 40px 20px 20px 30px; 
+	}
 
-/* Registration form page */
-.registration-form {
-	max-width: 260px;
-	background-color: #333333;
-	color: white;
-	border: 3px solid white;
-	border-radius: 10px;
-	padding: 20px;
-	margin: 150px auto; 
+	.login-form {
+		margin: 40px 20px 20px 20px; 
+	}
 
-}
+	/* Registration form page */
+	.registration-form {
+		max-width: 260px;
+		background-color: #333333;
+		color: white;
+		border: 3px solid white;
+		border-radius: 10px;
+		padding: 20px;
+		margin: 150px auto; 
+	}
 
-/* Main header */
+	/* Main header */
 
-.logo {
- 	width: 230px;
- 	position: absolute;
- 	top: 5px;
- 	left: 15px;
- 	
- 	
-}
+	.logo {
+	 	width: 230px;
+	 	position: absolute;
+	 	top: 5px;
+	 	left: 15px;
+	}
 
- .navbar-nav {
-    width: 70%;
-    text-align: right;
-    margin: 10px -32px 10px 70px;
-    padding: 0;
-    > li {
-      float: right;
-      display: inline-block;
- }
+	 .navbar-nav {
+	    width: 70%;
+	    text-align: right;
+	    margin: 10px -32px 10px 70px;
+	    padding: 0;
+	    > li {
+	      float: right;
+	      display: inline-block;
+	 }
 
 
- .nav.navbar-nav.navbar-right li a {
- 	font-size: 20px;
- }
+	 .nav.navbar-nav.navbar-right li a {
+	 	font-size: 20px;
+	 }
 
- footer p {
- 	font-size: 22px;
- }
+	 footer p {
+	 	font-size: 22px;
+	 }
 
-}
+	}
 
 /* Media Queries Desktop */
 
 @media screen and (min-width: 992px) {
 
-.landing-page{
-		background: url("../img/background.jpg"), #333333;
-		background-repeat: no-repeat;
-		background-size: 2300px;
-		background-position: -550px -20px;
-		
+	.landing-page{
+			background: url("../img/background.jpg"), #333333;
+			background-repeat: no-repeat;
+			background-size: 2300px;
+			background-position: -550px -20px;
 	}
 
 
-.newsfeed-form {
-	max-width: 500px;
-	background-color:rgba(255,255,255,0.8);
-	border-radius: 10px;
-	padding: 10px;
-	margin: 30px 60px;
-}
+	.newsfeed-form {
+		max-width: 500px;
+		background-color:rgba(255,255,255,0.8);
+		border-radius: 10px;
+		padding: 10px;
+		margin: 30px 60px;
+	}
 
-.login-form {
-	max-width: 260px;
-	background-color: #333333;
-	color: white;
-	border: 3px solid white;
-	border-radius: 10px;
-	padding: 20px;
-	margin: 30px 30px 30px 200px; 
-}
-
-.landing-page h1 {
-		text-align: center;
-		line-height: 30px;
-		padding: 10px 70px 10px 70px;
-		font-size: 25px;
-		margin: 10px;
-		
-		}
-
-.landing-heading {
+	.login-form {
+		max-width: 260px;
 		background-color: #333333;
+		color: white;
+		border: 3px solid white;
+		border-radius: 10px;
 		padding: 20px;
+		margin: 30px 30px 30px 200px; 
+	}
+
+	.landing-page h1 {
+			text-align: center;
+			line-height: 30px;
+			padding: 10px 70px 10px 70px;
+			font-size: 25px;
+			margin: 10px;
+	}
+
+	.landing-heading {
+			background-color: #333333;
+			padding: 20px;
 	}
 
 /* Main header */
 
-.logo {
- 	width: 400px;
- 	position: absolute;
- 	top: 20px;
- 	left: 15px;
- 	
- 	}
+	div.container.page-header {
+		margin: 0 0 0 0;
+	}
+
+	.logo {
+	 	width: 400px;
+	 	position: absolute;
+	 	top: 20px;
+	 	left: 35px;
+	 	
+	 	}
+
+	 	ul.nav li {
+		padding-left: 45px;
+	}
 
 
-.navbar-nav {
-    width: 60%;
-    text-align: right;
-    margin: 10px -100px 10px 70px;
-    padding: 30px 10px;
+	div.collapse.navbar-collapse {
+		
+	}
+
+
+ul.nav.navbar-nav.navbar-right {
+    width: 1000px;
+    margin: 10px 0px 10px 0px;
+    padding: 30px 10px 30px 200px;
     font-size: 22px;
     > li {
       float: right;
       display: inline-block;
       color: #333333;
  }
-
-
-
 
 }
