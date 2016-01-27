@@ -21,69 +21,50 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <img src="img/Volunteerlink_logo_farg.png" alt="logo" class="logo"></img>
+          <img src="img/Volunteerlink_logo_farg.png" alt="logo" class="logo">
           <div class="collapse navbar-collapse">
             <ul class="nav navbar-nav navbar-right">
-            <Li><a href="#">Home</a></li>
-            <Li><a href="#">About us</a></li>
-            <Li><a href="#">Contact us</a></li>
-            <Li><a href="#">For organizations</a></li>
+            <Li><a class="menu-link" href="index.html">Home</a></li>
+            <Li><a class="menu-link" href="#">About us</a></li>
+            <Li><a class="menu-link"href="#">Contact us</a></li>
+            <Li><a class="menu-link"href="org-start.html">For organizations</a></li>
           </ul>
           </div>
         </div>
       </div>
-
-       <main class="container-fluid">
- 
-        <div class="main-content container col-xs-12 col-sm-8 col-sm-offset-2 col-md-8 col-md-offset-2 col-lg-8 col-lg-offset-2">
+       <div class="landing-heading"><h1>The portal for volunteer work, connecting organizations and volunteer workers!</h1></div>
+      <main class="main-content-landing container-fluid">
+      <div class="container">
         <div class="row">
-          <h1>The portal for volunteer work, connecting organizations and volunteer workers!</h1>
-          <div class="newsfeed-form">
+          <div class="newsfeed-form col-xs-centered-12 col-sm-7 col-sm-offset-1 col-md-5 col-md-offset-2 col-lg-5 col-lg-offset-2">
             <header class="newsfeed-heading"><h2>News feed</h2></header>
-            <div id="landing-page-missions-list">
-
-            </div>
-            <!--<article class="mission-post">
-              <header class="mission-title"><h3>Title of mission</h3></header>
-                <li class="mission-sub-title"><h4>Organization:</h4></li>
-                <li class="mission-sub-title"><h4>Field of work:</h4></li>
-                <li class="mission-sub-title"><h4>About this mission:</h4></li>
-              <footer>
-                <a href=""><h4>Read more and apply</h4></a>
-              </footer>
-            </article>
-            <article class="mission-post">
-              <header class="mission-title"><h3>Title of mission</h3></header>
-                <li class="mission-sub-title"><h4>Organization:</h4></li>
-                <li class="mission-sub-title"><h4>Field of work:<h4></li>
-                <li class="mission-sub-title"><h4>About this mission:</h4></li>
-              <footer>
-                <a href=""><h4>Read more and apply</h4></a>
-              </footer>
-            </article> -->
+              <div id="landing-page-missions-list">
             </div>
           </div>
-          <div class="login-form">
+          <div class="login-form col-xs-centered-12 col-sm-4 col-md-3 col-md-offset-2 col-lg-3 col-lg-offset-2">
             <h3>Register an account, it's free!</h3>
-            <p>Create an account to be able to get email notifications, chat with other volunteers and more.</p>
-            <button type="submit" class="btn btn-default register-btn">Register now</button>
+            <p>Create an account to be able to apply for volunteer work, get email notifications, chat with other volunteers and more.</p>
+            <button type="submit" class="btn btn-default register-btn"><a href="registerform.html">Register now</a></button>
             <form>
               <div class="form-group">
-                <label for "username-input"><h3>Login:</h3></label>
-                <input type="email" class="form-control" id="username-input" placeholder="User name">
+                <label for "email-input"><h3>Login:</h3></label>
+                <input type="email" class="form-control" id="email-input" placeholder="User name">
               </div>
               <div class="form-group">
                 <input type="password" class="form-control" id="password-input" placeholder="Password">
               </div>
               <button type="submit" class="btn btn-default sign-in-btn"><a href="loggedin.html">Sign in</a></button>
             </form>
-          </div>
-        </div>
-      </div>
+            </div>
+             </div>
+             </div>
+     
+     
+    </main>
       <footer>
         <p>&copy;2016 Volunteer Link</p>
       </footer>
-    </main>
+     <script src="js/userloginandregister.js"></script>
     <script src="js/landing.js"></script>
     <script src="js/main.js"></script>
   </body>

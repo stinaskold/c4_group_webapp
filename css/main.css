@@ -22,7 +22,7 @@ h1 {
 	font-weight: 700;
 	font-size: 16px;
 	color: white;
-	margin: 10px;
+
 
 }
 
@@ -114,7 +114,7 @@ a:active {color: #000; text-decoration: none !important;}
 
 .logo {
  	width: 180px;
- 	heigth: auto;
+ 	height: auto;
  	padding: 10px;
 }
 
@@ -152,30 +152,28 @@ ul.nav li a {
 	background-color:rgba(255,255,255,0.8);
 	border-radius: 10px;
 	padding: 10px;
-	margin-top: 50px;
-
+	margin: 0 auto;
 }
 
 .all-missions-btn {
 	background-color:#333333; border: 2px solid #fff; color: #fff;
 }
 
-.main-content {
-	margin: 10px 0px;
 
-}
 
 .landing-page{
-		background: url("../img/background.jpg"), #333333;
-		background-repeat: no-repeat;
-		background-size: cover;
-		background-position: -100px 150px;
+		background:  #333333;
+
+		
 }
 
 .landing-page h1 {
 			text-align: center;
 			line-height: 20px;
+			padding: 10px 0 30px 0;
 		}
+
+
 
 
 /* Register Form */
@@ -183,19 +181,21 @@ ul.nav li a {
 
 /* Log-in Form */
 
-.login-form {
+.login-form, .registration-form {
 	max-width: 260px;
 	background-color: #333333;
 	color: white;
 	border: 3px solid white;
 	border-radius: 10px;
 	padding: 20px;
-	margin: 20px 0 30px 0;
+	margin: 20px auto; 
+
 }
 
 
-.register-btn, .sign-in-btn {
+.register-btn, .sign-in-btn, .confirm-registration-btn {
 	background-color: #f89c44; border: 2px solid #fff; color: #fff;
+	margin-top: 10px;
 }
 
 
@@ -315,18 +315,176 @@ ul.nav li a {
 
 /* Footer */
 
+footer {
+	height: 70px;
+	clear: both;
 
+
+
+}
 
 footer p {
 	color: white;
 	text-align: center;
-	padding-top: 20px;
-	margin-top: 20px;
+	padding-top: 30px;
+	margin-top: 0px;
+	clear: both;
+	
 
 }
 
 
 /* Media Queries Tablet */
 
+@media screen and (min-width: 768px) {
+
+
+
+/* Landingpage */
+
+.landing-page{
+		background: url("../img/background.jpg"), #333333;
+		background-repeat: no-repeat;
+		background-size: 2000px;
+		background-position: -800px 115px;
+		
+	}
+
+	.landing-page h1 {
+			text-align: center;
+			line-height: 30px;
+			padding: 10px 70px 20px 70px;
+			font-size: 22px;
+			margin: 10px;
+		
+		}
+
+
+	.landing-heading {
+		background-color: #333333;
+		padding: 0px;
+	}
+
+	.newsfeed-form {
+		background-color:rgba(255,255,255,0.8);
+		border-radius: 10px;
+		padding: 10px;
+		margin: 20px; 
+}
+
+/* Registration form page */
+.registration-form {
+	max-width: 260px;
+	background-color: #333333;
+	color: white;
+	border: 3px solid white;
+	border-radius: 10px;
+	padding: 20px;
+	margin: 150px auto; 
+
+}
+
+/* Main header */
+
+.logo {
+ 	width: 230px;
+ 	position: absolute;
+ 	top: 5px;
+ 	left: 15px;
+ 	
+ 	
+}
+
+ .navbar-nav {
+    width: 70%;
+    text-align: right;
+    margin: 10px -32px 10px 70px;
+    padding: 0;
+    > li {
+      float: right;
+      display: inline-block;
+ }
+
+
+ .nav.navbar-nav.navbar-right li a {
+ 	font-size: 20px;
+ }
+
+ footer p {
+ 	font-size: 22px;
+ }
+
+}
 
 /* Media Queries Desktop */
+
+@media screen and (min-width: 992px) {
+
+.landing-page{
+		background: url("../img/background.jpg"), #333333;
+		background-repeat: no-repeat;
+		background-size: 2300px;
+		background-position: -550px -20px;
+		
+	}
+
+
+.newsfeed-form {
+	max-width: 500px;
+	background-color:rgba(255,255,255,0.8);
+	border-radius: 10px;
+	padding: 10px;
+	margin: 30px 60px;
+}
+
+.login-form {
+	max-width: 260px;
+	background-color: #333333;
+	color: white;
+	border: 3px solid white;
+	border-radius: 10px;
+	padding: 20px;
+	margin: 30px 30px 30px 200px; 
+}
+
+.landing-page h1 {
+		text-align: center;
+		line-height: 30px;
+		padding: 10px 70px 10px 70px;
+		font-size: 25px;
+		margin: 10px;
+		
+		}
+
+.landing-heading {
+		background-color: #333333;
+		padding: 20px;
+	}
+
+/* Main header */
+
+.logo {
+ 	width: 400px;
+ 	position: absolute;
+ 	top: 20px;
+ 	left: 15px;
+ 	
+ 	}
+
+
+.navbar-nav {
+    width: 60%;
+    text-align: right;
+    margin: 10px -100px 10px 70px;
+    padding: 30px 10px;
+    font-size: 22px;
+    > li {
+      float: right;
+      display: inline-block;
+      color: #333333;
+ }
+
+
+
+
+}
