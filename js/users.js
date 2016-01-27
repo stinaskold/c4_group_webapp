@@ -12,7 +12,7 @@ $("#register-button").on("click", function() {
       console.log("Error creating user:", error);
     } else {
       console.log("Successfully created user account with uid:", userData.uid);
-      window.location.replace("org-loggedin.html");
+      window.location.assign("org-loggedin.html");
     }
   });
 });

@@ -27,7 +27,7 @@ h1 {
 }
 
 h2 {
-	font-family: 'Merriweather Sans', sans-serif;;
+	font-family: 'Merriweather Sans', sans-serif;
 	font-weight: 900;
 	font-size: 18px;
 }
@@ -101,13 +101,13 @@ a:active {color: #000; text-decoration: none !important;}
 
     /*  Organisations-page   */
 
-    .org-messages li {
+    .org-messages li, .org-start {
       background-color: #ecf0f1;
     }
 
-    .edit {background-color: #f89c44; border-color: #fff; color: #fff;}
+    .edit, #login-button {background-color: #f89c44; border-color: #fff; color: #fff;}
 
-    .delete {background-color:#333333; border-color: #fff; color: #fff;}
+    .delete, #register-button {background-color:#333333; border-color: #fff; color: #fff;}
 
 
 /* Main header */
@@ -270,21 +270,49 @@ ul.nav li a {
   color: #fff;
 }
 
-.edit, .delete {
+.edit, .delete, #register-button, #login-button {
   border: solid 2px;
   border-radius: 10px;
+}
+
+.edit-delete {
+  text-align: right;
+  margin-top:10px;
+  margin-bottom: -20px;
 }
 
 /*  Organisation - start page  */
 
 .org-start {
   margin-top: 40px;
-  background-color: #fff;
+  max-width: 650px;
+  padding-bottom: 40px;
+
 }
 
-#dialog-register {
-  margin-top: 40px;
+.org-start h2 {
+  margin-top: 30px;
+  text-align: center;
 }
+
+
+.org-start input, .org-start button{
+  margin-bottom: 10px;
+}
+
+.org-start input {
+  border-radius: 5px;
+  border: none;
+}
+
+#div-register, #div-login {
+  margin-top: 40px;
+  margin-bottom: 20px;
+}
+
+
+
+
 /* Footer */
 
 
