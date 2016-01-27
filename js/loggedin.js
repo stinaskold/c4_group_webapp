@@ -9,11 +9,13 @@ myFireBaseMissionInfo.once("value", function(allMissionsSnapshot) {
 
     allMissionsSnapshot.forEach(function(missionSnapshot) {
     var key = missionSnapshot.key();
-    var fTest = missionSnapshot.child("field").val();
-    var cTest = missionSnapshot.child("country").val();
-    var hTest = missionSnapshot.child("header").val();
-    var mTest = missionSnapshot.child("message").val();
-    missionCollection.push(addObject(fTest,cTest,hTest,mTest));
+    var org = missionSnapshot.child("organisation").val();
+    var em = missionSnapshot.child("email").val();
+    var f = missionSnapshot.child("field").val();
+    var c = missionSnapshot.child("country").val();
+    var h = missionSnapshot.child("header").val();
+    var m = missionSnapshot.child("message").val();
+    missionCollection.push(addObject(org,em,f,c,h,m));
   });
   missionCollection = missionCollection.reverse();
   addFieldAndCountryList();
@@ -108,7 +110,6 @@ function addFieldAndCountryList() {
     //e.stopImmediatePropagation();
 
     var fieldFilter = $(this).html();
-
     missionCollection = missionCollection.filter(function(filteredMission){
        return filteredMission.f == fieldFilter;
     });
@@ -122,7 +123,6 @@ function addFieldAndCountryList() {
     //e.stopImmediatePropagation();
 
     var countryFilter = $(this).html();
-
     missionCollection = missionCollection.filter(function(filteredMission){
        return filteredMission.c == countryFilter;
     });
@@ -149,6 +149,9 @@ function addMissions() {
     // Loop through all existing mission from the collection of missions
     for (i = 0; i < missionCollection.length; i++) {
 
+      field = missionCollection[i].f;
+      country = missionCollection[i].c;
+      organisation = missionCollection[i].o;
       header = missionCollection[i].h;
       message = missionCollection[i].m;
 
@@ -159,6 +162,7 @@ function addMissions() {
           panelBody.className = "panel-body";
       var missionHeader = document.createElement("h2");
           missionHeader.className = "mission-header";
+      var orgDetails = document.createElement("h4");
       var missionText = document.createElement("p");
           missionText.className = "mission-text";
       var missionButtonsDiv = document.createElement("div");
@@ -167,11 +171,14 @@ function addMissions() {
           readMoreBtn.className = "read-more-btn btn btn-default btn-sm";
       var applyBtn = document.createElement("button");
           applyBtn.className = "apply-btn btn btn-default btn-sm";
+          applyBtn.id = i;
 
       missionsListDiv.appendChild(missionPanel);
       missionPanel.appendChild(panelBody);
       panelBody.appendChild(missionHeader);
       missionHeader.innerHTML = header;
+      orgDetails.innerHTML = "Organisation: " + organisation + ";  Country: " + country + ";  Field: " + field;
+      panelBody.appendChild(orgDetails);
       panelBody.appendChild(missionText);
       missionText.innerHTML = message;
       panelBody.appendChild(missionButtonsDiv);
@@ -180,6 +187,74 @@ function addMissions() {
       missionButtonsDiv.appendChild(applyBtn);
       applyBtn.innerHTML = "Apply";
     }
+
+    // Add event listerner for button Apply
+    $(".apply-btn").on('click',function (e) {
+      //e.stopImmediatePropagation();
+      var missionClickedID = this.id;
+      console.log(missionClickedID);
+
+      orgEmailOfMissionClicked = missionCollection[missionClickedID].e;
+      console.log(orgEmailOfMissionClicked);
+
+      $("#missions-list").empty();
+
+      header = missionCollection[missionClickedID].h;
+      message = missionCollection[missionClickedID].m;
+
+      var missionsListDiv = document.getElementById('missions-list');
+      var missionPanel = document.createElement("div");
+          missionPanel.className = "mission-panel panel panel-default";
+      var panelBody = document.createElement("div");
+          panelBody.className = "panel-body";
+      var missionHeader = document.createElement("h2");
+          missionHeader.className = "mission-header";
+      var orgDetails = document.createElement("h4");
+      var missionText = document.createElement("p");
+          missionText.className = "mission-text";
+
+      missionsListDiv.appendChild(missionPanel);
+      missionPanel.appendChild(panelBody);
+      panelBody.appendChild(missionHeader);
+      missionHeader.innerHTML = header;
+      orgDetails.innerHTML = "Organisation: " + organisation + ";  Country: " + country + ";  Field: " + field;
+      panelBody.appendChild(orgDetails);
+      panelBody.appendChild(missionText);
+      missionText.innerHTML = message;
+
+      var html = '<div class="org-main col-xs-12 col-sm-12 col-md-8 col-md-offset-2" style="margin-top:10px;">' +
+                   '<ul>' +
+                     '<li><label for="" style="color: white;">Your Name</label><br>' +
+                     '<input type="text" class="name"></li>' +
+                     '<li><label for="" style="color: white;">Your Email</label><br>' +
+                     '<input type="text" class="email"></li>' +
+                     '<li><label for="" style="color: white;">Subject</label><br>' +
+                     '<input type="text" class="header"></li>' +
+                     '<li class="textarea-message"><label for="" style="color: white;">Message</label><br>' +
+                     '<textarea class="message" rows="5"></textarea></li>' +
+                     '<li><button class="btn btn-lg btn-default" id="send-message-to-apply"><a href="">Send message</a></button></li>' +
+                   '</ul>' +
+                 '<div class="messages"></div>' +
+                 '</div>';
+
+      var messageFormDiv = document.createElement('div');
+      messageFormDiv.innerHTML = html;
+      missionsListDiv.appendChild(messageFormDiv);
+
+      $("#send-message-to-apply").on('click',function (e) {
+
+          var name, email, header, message;
+          name = document.querySelector(".name").value;
+          email = document.querySelector(".email").value;
+          header = document.querySelector(".header").value;
+          message = document.querySelector(".message").value;
+
+          //this.setAttribbute('href','mailto:' + orgEmailOfMissionClicked + '?subject=' + header + '&body=' + message);
+          $(".org-main").empty();
+          $(".org-main").html("<h3 class='message-sent col-xs-12 col-sm-12 col-md-6 col-md-offset-3'>Your message was sent.</h3>");
+      });
+
+    });
 
     // Collection of all existing missions
     missionCollection = [];
@@ -190,12 +265,14 @@ function addMissions() {
     myFireBaseMissionInfo.once("value", function(allMissionsSnapshot) {
 
         allMissionsSnapshot.forEach(function(missionSnapshot) {
-        var key = missionSnapshot.key();
-        var fTest = missionSnapshot.child("field").val();
-        var cTest = missionSnapshot.child("country").val();
-        var hTest = missionSnapshot.child("header").val();
-        var mTest = missionSnapshot.child("message").val();
-        missionCollection.push(addObject(fTest,cTest,hTest,mTest));
+          var key = missionSnapshot.key();
+          var org = missionSnapshot.child("organisation").val();
+          var em = missionSnapshot.child("email").val();
+          var f = missionSnapshot.child("field").val();
+          var c = missionSnapshot.child("country").val();
+          var h = missionSnapshot.child("header").val();
+          var m = missionSnapshot.child("message").val();
+          missionCollection.push(addObject(org,em,f,c,h,m));
       });
       missionCollection = missionCollection.reverse();
     });
@@ -203,9 +280,11 @@ function addMissions() {
 
 
 // Function to create object array with missions info
-var addObject = function(field, country, header, message) {
+var addObject = function(organisation, email, field, country, header, message) {
   var newObj = new Object();
 
+  newObj.o = organisation;
+  newObj.e = email;
   newObj.f = field;
   newObj.c = country;
   newObj.h = header;
