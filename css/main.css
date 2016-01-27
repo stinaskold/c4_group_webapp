@@ -317,8 +317,8 @@ ul.nav li a {
 
 footer {
 	height: 70px;
-	background:  #333333;
 	clear: both;
+
 
 
 }
@@ -328,7 +328,8 @@ footer p {
 	text-align: center;
 	padding-top: 30px;
 	margin-top: 0px;
-	 clear: both;
+	clear: both;
+	
 
 }
 
@@ -369,6 +370,18 @@ footer p {
 		border-radius: 10px;
 		padding: 10px;
 		margin: 20px; 
+}
+
+/* Registration form page */
+.registration-form {
+	max-width: 260px;
+	background-color: #333333;
+	color: white;
+	border: 3px solid white;
+	border-radius: 10px;
+	padding: 20px;
+	margin: 150px auto; 
+
 }
 
 /* Main header */
@@ -415,10 +428,6 @@ footer p {
 		
 	}
 
-.landing-page h1 {
-	margin: 0;
-	padding: 0;
-}
 
 .newsfeed-form {
 	max-width: 500px;
@@ -441,7 +450,7 @@ footer p {
 .landing-page h1 {
 		text-align: center;
 		line-height: 30px;
-		padding: 10px 70px 20px 70px;
+		padding: 10px 70px 10px 70px;
 		font-size: 25px;
 		margin: 10px;
 		
