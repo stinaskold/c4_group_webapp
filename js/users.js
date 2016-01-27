@@ -12,19 +12,24 @@ $("#register-button").on("click", function() {
       console.log("Error creating user:", error);
     } else {
       console.log("Successfully created user account with uid:", userData.uid);
-      window.location.replace("org-loggedin.html");
+      window.location.assign("org-loggedin.html");
     }
   });
 });
 
-
-// ref.authWithPassword({
-//   email    : "bobtony@firebase.com",
-//   password : "correcthorsebatterystaple"
-// }, function(error, authData) {
-//   if (error) {
-//     console.log("Login Failed!", error);
-//   } else {
-//     console.log("Authenticated successfully with payload:", authData);
-//   }
-// });
+$("#login-button").on("click", function() {
+  event.preventDefault();
+  var email = $("#login-email").val();
+  var password = $("#login-password").val();
+  ref.authWithPassword({
+    email    : email,
+    password : password
+  }, function(error, authData) {
+    if (error) {
+      console.log("Login Failed!", error);
+    } else {
+      console.log("Authenticated successfully with payload:", authData);
+      window.location.replace("org-loggedin.html");
+    }
+  });
+});

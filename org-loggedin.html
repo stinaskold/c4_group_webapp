@@ -9,6 +9,7 @@
     <script src="js/jquery-1.11.3.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="https://cdn.firebase.com/js/client/2.4.0/firebase.js"></script>
+    <script src="js/checkStatus.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="C4_Web_App_Group">
   </head>
@@ -36,6 +37,8 @@
       <main class="logged-in-page-main container-fluid">
       <div class="org-main container">
 
+        <button>Log out</button>
+
         <div class="row">
           <div class="col-xs-12 col-xs-offset-0 col-md-6 col-md-offset-3">
             <!-- Button: Show messages -->
@@ -50,19 +53,23 @@
 
 
       <div class="row" id="org-message-div">
-        <!-- <div class="col-xs-12 col-sm-12 col-md-6 col-md-offset-3">
+        <div class="col-xs-12 col-sm-12 col-md-6 col-md-offset-3">
 
           <ul class="org-messages">
-            <li class="panel"><h2>Message headline</h2><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p></li>
-            <li class="panel"><h2>Message headline</h2><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p></li>
-            <li class="panel"><h2>Message headline</h2><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p></li>
+            <li class="panel"><h2>Message headline</h2><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p><div class="edit-delete"><button class="edit btn btn-default btn-sm ">Edit</button><button class="delete btn btn-default btn-sm">Delete</button></div></li>
+            <li class="panel"><h2>Message headline</h2><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p><div class="edit-delete"><button class="edit btn btn-default btn-sm ">Edit</button><button class="delete btn btn-default btn-sm">Delete</button></div></li>
+            <li class="panel"><h2>Message headline</h2><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p><div class="edit-delete"><button class="edit btn btn-default btn-sm ">Edit</button><button class="delete btn btn-default btn-sm">Delete</button></div></li>
           </ul>
-      </div> -->
+      </div>
     </div>
 
     <div class="row" id="org-form-div">
-      <!-- <div class="col-xs-12 col-sm-12 col-md-6 col-md-offset-3">
+      <div class="col-xs-12 col-sm-12 col-md-6 col-md-offset-3">
         <ul>
+        <li><label for="" style="color: white;">Organisation</label><br>
+        <input type="text" class="organisation"></li>
+        <li><label for="" style="color: white;">Email</label><br>
+        <input type="text" class="email"></li>
         <li><label for="" style="color: white;">Field</label><br>
         <input type="text" class="field"></li>
         <li><label for="" style="color: white;">Country</label><br>
@@ -75,7 +82,22 @@
 
         </ul>
         <div class="messages"></div>
-      </div> -->
+      </div>
+    </div>
+
+
+    <div class="row" id="test-form">
+      <div class="col-xs-12 col-sm-12 col-md-6 col-md-offset-3">
+        <ul>
+        <li ><label for="" style="color: white;">Test</label><br>
+        <input type="text" class="test-headline"></li>
+        <li><label for="" style="color: white;">Test-Message</label><br>
+        <textarea rows="5" class="test-message"></textarea></li>
+        <li><button class="btn btn-lg btn-default" id="send-testmessage">Send message</button></li>
+
+        </ul>
+        <div class="messages"></div>
+      </div>
     </div>
 
 
@@ -87,6 +109,7 @@
 
     </main>
     <script src="js/org.js"></script>
+    <script src="js/test-org-loggedin.js"></script>
 
 
   </body>
