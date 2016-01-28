@@ -1,3 +1,15 @@
+// Check if the user-volunteer is logged in. If not redirect to index.html
+/*var checkLogInStatus = new Firebase("https://c4users.firebaseio.com");
+var authData = checkLogInStatus.getAuth();
+
+if (authData) {
+  console.log("inloggad");
+}
+else {
+  console.log("inte inloggad");
+  window.location.replace("index.html");
+} */
+
 // Collection of all existing missions
 var missionCollection;
 missionCollection = [];
@@ -223,39 +235,48 @@ function addMissions() {
       missionText.innerHTML = message;
 
       var html = '<div class="org-main col-xs-12 col-sm-12 col-md-8 col-md-offset-2" style="margin-top:10px;">' +
-                   '<form method="post" id="applyFormID" class="applyFormClass">' +
+                   '<form name="input_form" id="applyFormID">' +
                      '<label for="" style="color: white;">Your Name</label><br>' +
-                     '<input type="text" class="name" name="name" id="name" placeholder="Name"><br>' +
+                     '<input type="text" class="name" name="username" id="name" placeholder="Name"><br>' +
                      '<label for="" style="color: white;">Your Email</label><br>' +
-                     '<input type="text" class="email" name="email" id="email" placeholder="Email"><br>' +
+                     '<input type="text" class="email" name="useremail" id="email" placeholder="Email"><br>' +
                      '<label for="" style="color: white;">Subject</label><br>' +
-                     '<input type="text" class="header"><br>' +
+                     '<input type="text" name="subject" class="header"><br>' +
                      '<label for="" class="textarea-message" style="color: white;">Message</label><br>' +
-                     '<textarea class="message" rows="5"></textarea><br>' +
-                     '<button id="send-message-to-apply" class="btn btn-lg btn-default"><a href="#" target="_blank" class="submit" id="test">Send message</a></button>' +
+                     '<textarea class="message" rows="5" type="text" name="emailtext"></textarea><br>' +
                    '</form>' +
-                 '<div class="messages"></div>' +
+                   '<form id="formID" name="proxy_form" method="post" enctype="multipart/form-data" action="mailto:fortestingdatabase@gmail.com?subject=your web" onsubmit="return sendEmail();">' +
+                   '<input type="hidden" name="message_body"><br>' +
+                   '<input id="go" type="submit" onclick="this.form.submit()" value="Send message"><br>' +
+                   '</form>' +
                 '</div>';
 
       var messageFormDiv = document.createElement('div');
       messageFormDiv.innerHTML = html;
       missionsListDiv.appendChild(messageFormDiv);
 
-      $("#send-message-to-apply").on('click',function (e) {
-        e.preventDefault();
+      function sendEmail(){
+        new_action = "mailto:" + orgEmailOfMissionClicked;
+        document.proxy_form.action = new_action;
 
-          /* var name, email, header, message;
-          name = document.querySelector(".name").value;
-          email = document.querySelector(".email").value;
-          header = document.querySelector(".header").value;
-          message = document.querySelector(".message").value; */
+        var username = document.input_form.username.value;
+        var email  = document.input_form.email.value;
+        var subject  = document.input_form.subject.value;
+        var emailtext  = document.input_form.emailtext.value;
 
-          $("#applyFormID").attr('action', 'mailto:' + orgEmailOfMissionClicked);
+        document.proxy_form.message_body.value ="Greetings. I want to apply to mission: " + subject + ". My message: " + emailtext + ". Sincerely, " + username + ". My email: " + email;
+        return true;
+      }
 
-          $(".org-main").empty();
-          $(".org-main").html("<h3 class='message-sent col-xs-12 col-sm-12 col-md-8 col-md-offset-2'>Your message was sent.</h3>");
-      });
+      window.onload = function(){
+        document.getElementById('go').onclick = function() {
+          document.getElementById('formID').submit();
+          return true;
+        };
+      };
 
+      $(".org-main").empty();
+      $(".org-main").html("<h3 class='message-sent col-xs-12 col-sm-12 col-md-8 col-md-offset-2'>Your message was sent.</h3>");
     });
 
     // Collection of all existing missions
