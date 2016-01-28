@@ -169,7 +169,7 @@ ul.nav li {
 		
 }
 
-.landing-page h1 {
+.landing-page h1, .about-page h1 {
 			text-align: center;
 			line-height: 20px;
 			padding: 10px 0 30px 0;
@@ -178,10 +178,11 @@ ul.nav li {
 
 
 
+
 /* Register Form */
 
 
-/* Log-in Form */
+/* Log-in Form  and register form */
 
 .login-form, .registration-form {
 	max-width: 260px;
@@ -195,9 +196,47 @@ ul.nav li {
 }
 
 
+
+
 .register-btn, .sign-in-btn, .confirm-registration-btn {
 	background-color: #f89c44; border: 2px solid #fff; color: #fff;
-	margin-top: 15px;
+	margin: 10px 0;
+}
+
+.confirm-registration-btn {
+	margin: 15px 0;
+}
+
+/* About-page */
+
+.about-page {
+	background: url("../img/barn.jpg");
+	background-size: cover;
+	background-repeat: repeat-y;
+
+}
+
+
+/* Contact-page */
+
+.contact-page {
+	background-color: #333333;
+	
+}
+
+.about-text, .contact-text {
+	margin-top: 7%;
+	margin-bottom: 7%;
+	color: #333333;
+	background-color:rgba(255,255,255,0.8);
+	border-radius: 10px;
+	padding: 20px;
+	
+
+}
+
+.about-text p, .contact-text p {
+	font-size: 15px;
 }
 
 
@@ -353,12 +392,12 @@ footer p {
 		background-position: -800px 115px;
 	}
 
-	.landing-page h1 {
+	.landing-page h1, .about-page h1{
 			text-align: center;
 			line-height: 30px;
-			padding: 10px 70px 20px 70px;
+			padding: 20px 70px 20px 70px;
 			font-size: 22px;
-			margin: 10px;
+			margin: 0 10px 10px 10px;
 	}
 
 
@@ -401,21 +440,31 @@ footer p {
 	 .navbar-nav {
 	    width: 70%;
 	    text-align: right;
-	    margin: 10px -32px 10px 70px;
-	    padding: 0;
+	    margin: 0;
+	    padding: 10px 0;;
 	    > li {
 	      float: right;
 	      display: inline-block;
-	 }
+	 	}
+	}
 
 
 	 .nav.navbar-nav.navbar-right li a {
-	 	font-size: 20px;
+	 	font-size: 14px;
 	 }
 
 	 footer p {
-	 	font-size: 22px;
+	 	font-size: 12px;
 	 }
+
+	  /* About-page */
+
+	.about-page {
+		background: url("../img/barn.jpg");
+		background-size: 2000px;
+		background-repeat: no-repeat;
+}
+
 
 	}
 
@@ -449,7 +498,7 @@ footer p {
 		margin: 30px 30px 30px 200px; 
 	}
 
-	.landing-page h1 {
+	.landing-page h1, .about-page h1 {
 			text-align: center;
 			line-height: 30px;
 			padding: 10px 70px 10px 70px;
@@ -476,25 +525,26 @@ footer p {
 	 	
 	 	}
 
-	 	ul.nav li {
+	 ul.nav li {
 		padding-left: 45px;
 	}
 
+	.nav.navbar-nav.navbar-right li a {
+	 	font-size: 22px;
+	 }
 
-	div.collapse.navbar-collapse {
-		
+	ul.nav.navbar-nav.navbar-right {
+	    width: 1000px;
+	    margin: 10px 0px 10px 0px;
+	    padding: 30px 10px 30px 200px;
+	    font-size: 22px;
+	    > li {
+	      float: right;
+	      display: inline-block;
+	      color: #333333;
+	 }
 	}
 
 
-ul.nav.navbar-nav.navbar-right {
-    width: 1000px;
-    margin: 10px 0px 10px 0px;
-    padding: 30px 10px 30px 200px;
-    font-size: 22px;
-    > li {
-      float: right;
-      display: inline-block;
-      color: #333333;
- }
 
 }
