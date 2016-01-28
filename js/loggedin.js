@@ -1,5 +1,5 @@
 // Check if the user-volunteer is logged in. If not redirect to index.html
-/*var checkLogInStatus = new Firebase("https://c4users.firebaseio.com");
+var checkLogInStatus = new Firebase("https://c4users.firebaseio.com");
 var authData = checkLogInStatus.getAuth();
 
 if (authData) {
@@ -8,7 +8,7 @@ if (authData) {
 else {
   console.log("inte inloggad");
   window.location.replace("index.html");
-} */
+}
 
 // Collection of all existing missions
 var missionCollection;
@@ -275,8 +275,8 @@ function addMissions() {
         };
       };
 
-      //$(".org-main").empty();
-      //$(".org-main").html("<h3 class='message-sent col-xs-12 col-sm-12 col-md-8 col-md-offset-2'>Your message was sent.</h3>");
+      $(".org-main").empty();
+      $(".org-main").html("<h3 class='message-sent col-xs-12 col-sm-12 col-md-8 col-md-offset-2'>Your message was sent.</h3>");
     });
 
     // Collection of all existing missions
