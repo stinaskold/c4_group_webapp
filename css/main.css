@@ -178,10 +178,11 @@ ul.nav li {
 
 
 
+
 /* Register Form */
 
 
-/* Log-in Form */
+/* Log-in Form  and register form */
 
 .login-form, .registration-form {
 	max-width: 260px;
@@ -195,11 +196,16 @@ ul.nav li {
 }
 
 
+
+
 .register-btn, .sign-in-btn, .confirm-registration-btn {
 	background-color: #f89c44; border: 2px solid #fff; color: #fff;
-	margin-top: 15px;
+	margin: 10px 0;
 }
 
+.confirm-registration-btn {
+	margin: 15px 0;
+}
 
 /* About-page */
 
