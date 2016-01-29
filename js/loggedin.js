@@ -259,7 +259,7 @@ function addMissions() {
                    '</form>' +
                    '<form id="formID" name="proxy_form" method="post" enctype="multipart/form-data" action="mailto:fortestingdatabase@gmail.com?subject=your web" onsubmit="return sendEmail();">' +
                    '<input type="hidden" name="message_body"><br>' +
-                   '<input id="go" type="submit" onclick="this.form.submit()" value="Send message"><br>' +
+                   '<input id="go" type="submit" value="Send message"><br>' +
                    '</form>' +
                 '</div>';
 
@@ -280,16 +280,18 @@ function addMissions() {
         return true;
       }
 
+      /*
       window.onload = function(){
         document.getElementById('go').onclick = function() {
           document.getElementById('formID').submit();
           return true;
 
-          $(".org-main").val('');
-          $(".org-main").html("<h3 class='message-sent col-xs-12 col-sm-12 col-md-8 col-md-offset-2'>Your message was sent.</h3>");
         };
-      };
+      }; */
     });
+
+    $(".org-main").val('');
+    $(".org-main").html("<h3 class='message-sent col-xs-12 col-sm-12 col-md-8 col-md-offset-2'>Your message was sent.</h3>");
 
 
     // Collection of all existing missions
