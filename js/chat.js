@@ -1,4 +1,7 @@
 
+//Chat function fetched from Firebase documentation
+
+
       var myDataRef = new Firebase('https://fro15-c4-webapp.firebaseio.com/');
       $('#messageInput').keypress(function (e) {
         if (e.keyCode == 13) {
