@@ -656,14 +656,13 @@ footer p {
 	.landing-page{
 			background: url("../img/background.jpg"), #333333;
 			background-repeat: no-repeat;
-			background-size: 2800px;
-			background-position: -550px -300px;
+			background-size: cover;
 			}
 
 
 		.about-page {
 			background: url("../img/barn.jpg");
-			background-size: 2800px;
+			background-size: cover;
 			background-repeat: no-repeat;
 		}
 }
