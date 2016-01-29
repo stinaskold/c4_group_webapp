@@ -211,8 +211,8 @@ ul.nav li {
 
 .about-page {
 	background: url("../img/barn.jpg");
-	background-size: cover;
-	background-repeat: repeat-y;
+	background-size: 2000px;
+	background-repeat: no-repeat;
 
 }
 
@@ -228,7 +228,7 @@ ul.nav li {
 	margin-top: 7%;
 	margin-bottom: 7%;
 	color: #333333;
-	background-color:rgba(255,255,255,0.8);
+	background-color: #ecf0f1;
 	border-radius: 10px;
 	padding: 20px;
 
@@ -267,6 +267,57 @@ ul.nav li {
 	border-radius: 10px;
 }
 
+
+/*  Chat window  */
+
+#chat-page {
+	background-color: #333333;
+}
+
+
+.chat-container{
+	max-width: 460px;
+	background-color: #333333;
+	color: #333333;
+	border: 3px solid white;
+	border-radius: 10px;
+	padding: 20px 20px 40px 20px;
+	margin: 30px auto;
+}
+
+.chat-container h1{
+	
+	margin-left: 5px;
+	font-size: 20px;
+}
+
+
+
+#chat-window {
+	background-color: #ecf0f1;
+	border-radius: 10px;
+	padding: 10px;
+	margin: 0 auto;
+}
+
+
+#nameInput {
+	padding: 5px 64px 5px 5px;
+	margin-top: 10px;
+	border-radius: 5px;
+	border: none;
+}
+
+
+#messageInput {
+	padding: 5px 64px 5px 5px;
+	margin-top: 10px;
+	border-radius: 5px;
+	border: none;
+}
+
+
+
 .logged-in-main #log-out {
   background-color: #333;
   color: #fff;
@@ -274,6 +325,7 @@ ul.nav li {
   border-radius: 50px;
   border: 2px solid #fff;
 }
+
 
 /* Organisation page   */
 
@@ -408,16 +460,13 @@ button.edit {
   color: red;
 }
 
-
-
 /* Footer */
 
 footer {
-	height: 70px;
 	clear: both;
-
-
-
+   	width:100%;
+   	height:70px;
+	
 }
 
 footer p {
@@ -426,8 +475,6 @@ footer p {
 	padding-top: 30px;
 	margin-top: 0px;
 	clear: both;
-
-
 }
 
 
@@ -598,7 +645,24 @@ footer p {
 	      color: #333333;
 	 }
 	}
+}
 
 
+/* Media Queries large desktop screens */
 
+@media screen and (min-width: 1500px) {
+
+	.landing-page{
+			background: url("../img/background.jpg"), #333333;
+			background-repeat: no-repeat;
+			background-size: 2800px;
+			background-position: -550px -300px;
+			}
+
+
+		.about-page {
+			background: url("../img/barn.jpg");
+			background-size: 2800px;
+			background-repeat: no-repeat;
+		}
 }

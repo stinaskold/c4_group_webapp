@@ -339,3 +339,25 @@ var addObject = function(organisation, email, field, country, header, message) {
 
   return newObj;
 };
+
+
+//Takes the user to chat page, still authorized.
+
+var ref = new Firebase("https://fro15-c4-webapp.firebaseio.com");
+$("#chat").on("click", function() {
+  event.preventDefault();
+  window.location.replace("chat.html");
+  console.log("opened chat page"); 
+  if (authData) {
+  console.log("inloggad");
+}
+else {
+  console.log("inte inloggad");
+  window.location.replace("index.html");
+}
+
+}); 
+
+
+
+

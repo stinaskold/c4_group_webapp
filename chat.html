@@ -12,7 +12,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="C4_Web_App_Group">
   </head>
-  <body class="about-page">
+  <body class="contact-page">
    
       <div class="navbar navbar-default">
         <div class="page-header">
@@ -26,29 +26,56 @@
             <ul class="nav navbar-nav navbar-right">
             <Li><a class="menu-link" href="index.html">Home</a></li>
             <Li><a class="menu-link" href="about.html">About us</a></li>
-            <Li><a class="menu-link"href="contact.html">Contact us</a></li>
-            <Li><a class="menu-link"href="org-start.html">For organizations</a></li>
+            <Li><a class="menu-link" href="contact.html">Contact us</a></li>
+            <Li><a class="menu-link" href="loggedin.html">Close chat</a></li>
           </ul>
           </div>
         </div>
       </div>
       <main class="container-fluid">
-      <div class="container">
-        <div class="row">
-          <div class="about-text col-xs-centered-12 col-sm-8 col-sm-offset-2 col-md-8 col-md-offset-2 col-lg-8 col-lg-offset-2">
-            <h2>What we do</h2>
-            <P>Our vision and goal is to connect organizations in need of volunteers with people who have an interest and will of working as a volunteer. We make finding the jobs easy, collecting job ads directly from organizations through out the world.</p>
-            
-            <h2>Who are you?</h2>
-            <P>Since you are reading this page, you are probably one of those great people who wants to volunteer. Regardless if it's the urge for helping humans in need, a burning animal interest or just the excitement of an adventure that motivates you, we can assure that you will find something that suites you here on our page.</p>
-
-               <P>Are you an organization who wants to cooperate with us? check out our <a href="org-start.html">For organizations</a> page and create an account. It's as simple as that!</p>
-            </div>
+      <div class="chat-container">
+            <h1>Volunteer chat</h1>
+            <div id="chat-window">
+            <div id='messagesDiv'></div>
           </div>
+            <input type='text' id='nameInput' placeholder='Name'>
+            <input type='text' id='messageInput' placeholder='Message'>
+          
         </div>
-      </main>
+     </div>
+     
+    </main>
       <footer>
         <p>&copy;2016 Volunteer Link</p>
       </footer>
+      <script src="js/chat.js"></script>
+      <script src="js/loggedin.js"></script>
+
+
+   
   </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
