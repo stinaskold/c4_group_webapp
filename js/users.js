@@ -1,6 +1,7 @@
 // Reference to user database
 var ref = new Firebase("https://c4users.firebaseio.com");
 
+
 // Register new user, go to logged-in-page
 $("#register-button").on("click", function() {
   event.preventDefault();
@@ -11,10 +12,9 @@ $("#register-button").on("click", function() {
     password : password
   }, function(error, userData) {
     if (error) {
-      console.log("Error creating user:", error);
+      $("#error-register").text(error);
     } else {
-      console.log("Successfully created user account with uid:", userData.uid);
-      window.location.assign("org-loggedin.html");
+      window.location.replace("org-loggedin.html");
     }
   });
 });
@@ -30,9 +30,19 @@ $("#login-button").on("click", function() {
   }, function(error, authData) {
     if (error) {
       console.log("Login Failed!", error);
+      $("#error-login").text(error);
     } else {
-      console.log("Authenticated successfully with payload:", authData);
       window.location.replace("org-loggedin.html");
     }
   });
+});
+
+// Remove error message on input (register)
+$("#div-register").on("input", function() {
+    $("#error-register").empty();
+});
+
+// Remove error message on input (login)
+$("#div-login").on("input", function() {
+    $("#error-login").empty();
 });

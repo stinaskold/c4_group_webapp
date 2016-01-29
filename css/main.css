@@ -47,7 +47,7 @@ h4 {
 p {
 	font-family: 'Merriweather', serif;
 	font-weight: 400;
-	font-size: 10px;
+	font-size: 14px;
 
 }
 
@@ -192,11 +192,11 @@ ul.nav li {
 	border-radius: 10px;
 	padding: 20px;
 	margin: 20px auto;
-
 }
 
-
-
+.login-form p, .registration-form p {
+  font-size: 10px;
+}
 
 .register-btn, .sign-in-btn, .confirm-registration-btn {
 	background-color: #f89c44; border: 2px solid #fff; color: #fff;
@@ -262,9 +262,17 @@ ul.nav li {
 }
 
 .read-more-btn, .apply-btn, .field-btn, .country-btn, .all-missions-btn {
-	margin-right: 5px;
+	margin-right: 10px;
 	border: solid 2px;
 	border-radius: 10px;
+}
+
+.logged-in-main #log-out {
+  background-color: #333;
+  color: #fff;
+  padding: 0.5% 1%;
+  border-radius: 50px;
+  border: 2px solid #fff;
 }
 
 /* Organisation page   */
@@ -273,9 +281,36 @@ ul.nav li {
   margin-top: 70px;
 }
 
-.org-main button {
+#show-messages, #create-message, #log-out {
   margin-bottom: 20px;
-  margin-right: 5px;
+  margin-right: 2px;
+  border-radius: 0;
+  background-color: #ccc;
+  padding-left: 8.53%;
+  padding-right: 8.53%;
+  font-size: 12px;
+}
+
+#show-messages:hover, #create-message:hover, #log-out:hover, #send-message:hover {
+  background-color: #B0B0B0;
+}
+
+#send-message {
+  width: 100%;
+  font-size: 14px;
+  background-color: #ccc;
+  color: #333;
+  font-weight: normal;
+}
+
+
+@media screen and (max-width: 1200px) {
+  #show-messages, #create-message, #log-out {
+    padding-left: 3%;
+    padding-right: 3%;
+    font-size: 10px;
+    margin-right: 2px;
+  }
 }
 
 .org-main label {
@@ -316,11 +351,25 @@ ul.nav li {
   border-radius: 10px;
 }
 
-.edit-delete {
-  text-align: right;
-  margin-top:10px;
-  margin-bottom: -20px;
+#register-button, #login-button {
+  border-radius: 5px;
 }
+
+#register-button:hover, #login-button:hover {
+  color: #333;
+  background-color: #e6e6e6;
+  border-color: #adadad;
+}
+
+button.delete {
+  margin-right: 10px;
+}
+
+button.edit {
+  margin-right: 5px;
+}
+
+
 
 /*  Organisation - start page  */
 
@@ -353,6 +402,11 @@ ul.nav li {
   margin-bottom: 20px;
 }
 
+#error-register, #error-login {
+  font-size: 12px;
+  width: 200px;
+  color: red;
+}
 
 
 

@@ -13,9 +13,8 @@ $(".confirm-registration-btn").on("click", function() {
     password : password
   }, function(error, userData) {
     if (error) {
-      console.log("Error creating user:", error);
+      $("#register-message").text(error);
     } else {
-      console.log("Successfully created user account with uid:", userData.uid);
       window.location.replace("loggedin.html");
     }
   });
@@ -34,15 +33,22 @@ $(".sign-in-btn").on("click", function() {
     password : password
   }, function(error, authData) {
     if (error) {
-      console.log("Login failed!", error);
+      $("#login-message").text(error);
     } else {
-      console.log("Authenticated successfully with payload:", authData);
       window.location.replace("loggedin.html");
     }
   });
 });
 
+// Remove error message on input (register)
+$(".registration-form").on("input", function() {
+    $("#register-message").empty();
+});
 
+// Remove error message on input (login)
+$(".login-form").on("input", function() {
+    $("#login-message").empty();
+});
 
 /*
 //log out user
