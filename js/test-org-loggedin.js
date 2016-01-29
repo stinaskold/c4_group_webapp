@@ -9,14 +9,19 @@ console.log(currentUserURL);
 
 var userUrlRef = new Firebase(currentUserURL);
 
-$("#send-testmessage").click(function() {
-  var testHeadline,testMessage;
 
-  testHeadline = document.querySelector(".test-headline").value;
-  testMessage = document.querySelector(".test-message").value;
-
-  addTestMessageToDatabase(testHeadline, testMessage);
+  $("#send-testmessage").click(function() {
+    $("#form-action-test").attr("action", "mailto:stinaskold@gmail.com");
 });
+
+// $("#send-testmessage").click(function() {
+//   var testHeadline,testMessage;
+//
+//   testHeadline = document.querySelector(".test-headline").value;
+//   testMessage = document.querySelector(".test-message").value;
+//
+//   addTestMessageToDatabase(testHeadline, testMessage);
+// });
 
 
 
