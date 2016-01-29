@@ -3,9 +3,9 @@
 ///Stinas kod
 
 // Get user
-var userRef = new Firebase("https://fro15-c4-webapp.firebaseio.com");
-var authData = userRef.getAuth();
-var user = authData.uid;
+//var userRef = new Firebase("https://fro15-c4-webapp.firebaseio.com");
+//var authData = userRef.getAuth();
+//var user = authData.uid;
 
     var usernameRef = new Firebase('https://fro15-c4-webapp.firebaseio.com/users/username');
     //var username = usersRef.child("username").toString();
