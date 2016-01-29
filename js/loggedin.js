@@ -257,9 +257,9 @@ function addMissions() {
                      '<label for="" class="textarea-message" style="color: white;">Message</label><br>' +
                      '<textarea class="message" rows="5" type="text" name="emailtext"></textarea><br>' +
                    '</form>' +
-                   '<form id="formID" name="proxy_form" method="post" enctype="multipart/form-data" action="mailto:fortestingdatabase@gmail.com?subject=your web" onsubmit="return sendEmail();">' +
+                   '<form id="formID" name="proxy_form" method="post" enctype="multipart/form-data" action="">' +
                    '<input type="hidden" name="message_body"><br>' +
-                   '<input id="go" type="submit" onclick="this.form.submit()" value="Send message"><br>' +
+                   '<input id="go" type="submit" value="Send message"><br>' +
                    '</form>' +
                 '</div>';
 
@@ -267,7 +267,7 @@ function addMissions() {
       messageFormDiv.innerHTML = html;
       missionsListDiv.appendChild(messageFormDiv);
 
-      function sendEmail(){
+      /* function sendEmail(){
         new_action = "mailto:" + orgEmailOfMissionClicked;
         document.proxy_form.action = new_action;
 
@@ -278,18 +278,30 @@ function addMissions() {
 
         document.proxy_form.message_body.value ="Greetings. I want to apply to mission: " + subject + ". My message: " + emailtext + ". Sincerely, " + username + ". My email: " + email;
         return true;
-      }
+      } */
 
       window.onload = function(){
         document.getElementById('go').onclick = function() {
+          new_action = "mailto:" + orgEmailOfMissionClicked;
+          document.proxy_form.action = new_action;
+
+          var username = document.input_form.username.value;
+          var email  = document.input_form.email.value;
+          var subject  = document.input_form.subject.value;
+          var emailtext  = document.input_form.emailtext.value;
+
+          document.proxy_form.message_body.value ="Greetings. I want to apply to mission: " + subject + ". My message: " + emailtext + ". Sincerely, " + username + ". My email: " + email;
+
           document.getElementById('formID').submit();
-          return true;
+          //return true;
+
         };
       };
-
-      $(".org-main").empty();
-      $(".org-main").html("<h3 class='message-sent col-xs-12 col-sm-12 col-md-8 col-md-offset-2'>Your message was sent.</h3>");
     });
+
+    $(".org-main").val('');
+    $(".org-main").html("<h3 class='message-sent col-xs-12 col-sm-12 col-md-8 col-md-offset-2'>Your message was sent.</h3>");
+
 
     // Collection of all existing missions
     missionCollection = [];
