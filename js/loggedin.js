@@ -329,7 +329,7 @@ var addObject = function(organisation, email, field, country, header, message) {
 };
 
 
-//Takes the user to chat pages, still authorized
+//Takes the user to chat page, still authorized.
 
 var ref = new Firebase("https://fro15-c4-webapp.firebaseio.com");
 $("#chat").on("click", function() {
