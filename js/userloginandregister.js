@@ -6,9 +6,11 @@
 var ref = new Firebase("https://fro15-c4-webapp.firebaseio.com");
 $(".confirm-registration-btn").on("click", function() {
   event.preventDefault();
+  var username = $("#username-registration-input").val();
   var email = $("#email-registration-input").val();
   var password = $("#password-registration-input").val();
   ref.createUser({
+    username : username,
     email    : email,
     password : password
   }, function(error, userData) {
