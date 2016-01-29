@@ -247,7 +247,7 @@ function addMissions() {
       missionText.innerHTML = message;
 
       var html = '<div class="org-main col-xs-12 col-sm-12 col-md-8 col-md-offset-2" style="margin-top:10px;">' +
-                   '<form name="input_form" id="formID" method="post" enctype="multipart/form-data" action="mailto:" onsubmit="this.action=sendEmail();">' +
+                   '<form name="input_form" id="formID" method="post" enctype="text/plain" action="mailto:" onsubmit="this.action=sendEmail();">' +
                      '<label for="" style="color: white;">Your Name</label><br>' +
                      '<input type="text" class="name" name="username" id="name" placeholder="Name"><br>' +
                      '<label for="" style="color: white;">Your Email</label><br>' +
@@ -258,50 +258,13 @@ function addMissions() {
                      '<textarea class="message" rows="5" type="text" name="emailtext"></textarea><br>' +
                      '<input id="go" type="submit" value="Send message"><br>' +
                    '</form>' +
-                   //'<form id="formID" name="proxy_form" method="post" enctype="multipart/form-data" action="">' +
-                   //'<input type="hidden" name="message_body"><br>' +
-                   //'<input id="go" type="submit" value="Send message"><br>' +
-                   //'</form>' +
                 '</div>';
 
       var messageFormDiv = document.createElement('div');
       messageFormDiv.innerHTML = html;
       missionsListDiv.appendChild(messageFormDiv);
 
-      /* function sendEmail(){
-        new_action = "mailto:" + orgEmailOfMissionClicked;
-        document.proxy_form.action = new_action;
-
-        var username = document.input_form.username.value;
-        var email  = document.input_form.email.value;
-        var subject  = document.input_form.subject.value;
-        var emailtext  = document.input_form.emailtext.value;
-
-        document.proxy_form.message_body.value ="Greetings. I want to apply to mission: " + subject + ". My message: " + emailtext + ". Sincerely, " + username + ". My email: " + email;
-        return true;
-      }
-      window.onload = function(){
-        document.getElementById('go').onclick = function() {
-          new_action = "mailto:" + orgEmailOfMissionClicked;
-          document.proxy_form.action = new_action;
-
-          var username = document.input_form.username.value;
-          var email  = document.input_form.email.value;
-          var subject  = document.input_form.subject.value;
-          var emailtext  = document.input_form.emailtext.value;
-
-          document.proxy_form.message_body.value ="Greetings. I want to apply to mission: " + subject + ". My message: " + emailtext + ". Sincerely, " + username + ". My email: " + email;
-
-        document.getElementById('formID').submit();
-        //return true;
-
-        };
-      }; */
     });
-
-    //$(".org-main").val('');
-    //$(".org-main").html("<h3 class='message-sent col-xs-12 col-sm-12 col-md-8 col-md-offset-2'>Your message was sent.</h3>");
-
 
     // Collection of all existing missions
     missionCollection = [];
