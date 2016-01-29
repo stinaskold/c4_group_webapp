@@ -257,7 +257,7 @@ function addMissions() {
                      '<label for="" class="textarea-message" style="color: white;">Message</label><br>' +
                      '<textarea class="message" rows="5" type="text" name="emailtext"></textarea><br>' +
                    '</form>' +
-                   '<form id="formID" name="proxy_form" method="post" enctype="multipart/form-data" action="">' +
+                   '<form id="formID" name="proxy_form" method="get" enctype="multipart/form-data" action="">' +
                    '<input type="hidden" name="message_body"><br>' +
                    '<input id="go" type="submit" value="Send message"><br>' +
                    '</form>' +
