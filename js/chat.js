@@ -1,5 +1,7 @@
 
-/////////////////
+//Chat function fetched from Firebase documentation
+
+
 ///Stinas kod
 
 // Get user
@@ -18,7 +20,6 @@
 // });
     //console.log(username);
 
-//////////////////
 
       var myDataRef = new Firebase('https://fro15-c4-webapp.firebaseio.com/');
       $('#messageInput').keypress(function (e) {
