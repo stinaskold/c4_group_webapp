@@ -1,5 +1,7 @@
+// Reference to user database
 var ref = new Firebase("https://c4users.firebaseio.com");
 
+// Register new user, go to logged-in-page
 $("#register-button").on("click", function() {
   event.preventDefault();
   var email = $("#register-email").val();
@@ -17,6 +19,7 @@ $("#register-button").on("click", function() {
   });
 });
 
+// Check if user is registered, log in and go to logged-in-page
 $("#login-button").on("click", function() {
   event.preventDefault();
   var email = $("#login-email").val();
