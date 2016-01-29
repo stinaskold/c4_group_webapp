@@ -23,12 +23,12 @@ $(".confirm-registration-btn").on("click", function() {
 ///////////////////
 // Till chatten:
 
-var username = $("#username-registration-input").val();
+//var username = $("#username-registration-input").val();
 
-var usersRef = ref.child("users");
-usersRef.set({
-    username: username
-});
+//var usersRef = ref.child("users");
+//usersRef.set({
+    //username: username
+//});
 //////////////////
 
 //Login user
