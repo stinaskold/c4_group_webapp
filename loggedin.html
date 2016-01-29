@@ -19,11 +19,11 @@
       var subject  = document.input_form.subject.value;
       var emailtext  = document.input_form.emailtext.value;
 
-      new_action = "mailto:" + orgEmailOfMissionClicked + "?subject=" + subject + "?body=Hello! My name is " + username + " " + emailtext;
+      new_action = "mailto:" + orgEmailOfMissionClicked + "?subject="+subject+"&body=Hello! My name is " + username + " . " + emailtext;
 
       $(".org-main").val('');
       $(".org-main").html("<h3 class='message-sent col-xs-12 col-sm-12 col-md-8 col-md-offset-2'>Your message was sent.</h3>");
-      
+
       return new_action;
       }
     </script>
