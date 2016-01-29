@@ -11,6 +11,24 @@
     <script src="https://cdn.firebase.com/js/client/2.4.0/firebase.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="C4_Web_App_Group">
+    <script type="text/javascript">
+      function sendEmail(){
+      new_action = "mailto:" + orgEmailOfMissionClicked;
+      document.proxy_form.action = new_action;
+
+      var username = document.input_form.username.value;
+      var email  = document.input_form.email.value;
+      var subject  = document.input_form.subject.value;
+      var emailtext  = document.input_form.emailtext.value;
+
+      document.proxy_form.message_body.value ="Greetings. I want to apply to mission: " + subject + ". My message: " + emailtext + ". Sincerely, " + username + ". My email: " + email;
+      return true;
+      }
+
+      $(".org-main").val('');
+      $(".org-main").html("<h3 class='message-sent col-xs-12 col-sm-12 col-md-8 col-md-offset-2'>Your message was sent.</h3>");
+
+    </script>
   </head>
   <body class="logged-in-page">
 

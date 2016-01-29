@@ -247,7 +247,7 @@ function addMissions() {
       missionText.innerHTML = message;
 
       var html = '<div class="org-main col-xs-12 col-sm-12 col-md-8 col-md-offset-2" style="margin-top:10px;">' +
-                   '<form name="input_form" id="applyFormID">' +
+                   '<form name="input_form" id="formID" method="post" enctype="multipart/form-data" action="mailto:">' +
                      '<label for="" style="color: white;">Your Name</label><br>' +
                      '<input type="text" class="name" name="username" id="name" placeholder="Name"><br>' +
                      '<label for="" style="color: white;">Your Email</label><br>' +
@@ -256,8 +256,9 @@ function addMissions() {
                      '<input type="text" name="subject" class="header"><br>' +
                      '<label for="" class="textarea-message" style="color: white;">Message</label><br>' +
                      '<textarea class="message" rows="5" type="text" name="emailtext"></textarea><br>' +
+                     //'<input id="go" type="submit" value="Send message"><br>' +
                    '</form>' +
-                   '<form id="formID" name="proxy_form" method="get" enctype="multipart/form-data" action="">' +
+                   '<form id="formID" name="proxy_form" method="post" enctype="multipart/form-data" action="">' +
                    '<input type="hidden" name="message_body"><br>' +
                    '<input id="go" type="submit" value="Send message"><br>' +
                    '</form>' +
@@ -278,8 +279,7 @@ function addMissions() {
 
         document.proxy_form.message_body.value ="Greetings. I want to apply to mission: " + subject + ". My message: " + emailtext + ". Sincerely, " + username + ". My email: " + email;
         return true;
-      } */
-
+      }
       window.onload = function(){
         document.getElementById('go').onclick = function() {
           new_action = "mailto:" + orgEmailOfMissionClicked;
@@ -292,15 +292,15 @@ function addMissions() {
 
           document.proxy_form.message_body.value ="Greetings. I want to apply to mission: " + subject + ". My message: " + emailtext + ". Sincerely, " + username + ". My email: " + email;
 
-          document.getElementById('formID').submit();
-          //return true;
+        document.getElementById('formID').submit();
+        //return true;
 
         };
-      };
+      }; */
     });
 
-    $(".org-main").val('');
-    $(".org-main").html("<h3 class='message-sent col-xs-12 col-sm-12 col-md-8 col-md-offset-2'>Your message was sent.</h3>");
+    //$(".org-main").val('');
+    //$(".org-main").html("<h3 class='message-sent col-xs-12 col-sm-12 col-md-8 col-md-offset-2'>Your message was sent.</h3>");
 
 
     // Collection of all existing missions
