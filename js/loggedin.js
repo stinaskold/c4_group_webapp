@@ -247,7 +247,7 @@ function addMissions() {
       missionText.innerHTML = message;
 
       var html = '<div class="org-main col-xs-12 col-sm-12 col-md-8 col-md-offset-2" style="margin-top:10px;">' +
-                   '<form name="input_form" id="applyFormID">' +
+                   '<form name="input_form" id="formID" method="post" enctype="text/plain" action="mailto:" onsubmit="this.action=sendEmail();">' +
                      '<label for="" style="color: white;">Your Name</label><br>' +
                      '<input type="text" class="name" name="username" id="name" placeholder="Name"><br>' +
                      '<label for="" style="color: white;">Your Email</label><br>' +
@@ -256,10 +256,7 @@ function addMissions() {
                      '<input type="text" name="subject" class="header"><br>' +
                      '<label for="" class="textarea-message" style="color: white;">Message</label><br>' +
                      '<textarea class="message" rows="5" type="text" name="emailtext"></textarea><br>' +
-                   '</form>' +
-                   '<form id="formID" name="proxy_form" method="post" enctype="multipart/form-data" action="mailto:fortestingdatabase@gmail.com?subject=your web" onsubmit="return sendEmail();">' +
-                   '<input type="hidden" name="message_body"><br>' +
-                   '<input id="go" type="submit" onclick="this.form.submit()" value="Send message"><br>' +
+                     '<input id="go" type="submit" value="Send message"><br>' +
                    '</form>' +
                 '</div>';
 
@@ -267,28 +264,6 @@ function addMissions() {
       messageFormDiv.innerHTML = html;
       missionsListDiv.appendChild(messageFormDiv);
 
-      function sendEmail(){
-        new_action = "mailto:" + orgEmailOfMissionClicked;
-        document.proxy_form.action = new_action;
-
-        var username = document.input_form.username.value;
-        var email  = document.input_form.email.value;
-        var subject  = document.input_form.subject.value;
-        var emailtext  = document.input_form.emailtext.value;
-
-        document.proxy_form.message_body.value ="Greetings. I want to apply to mission: " + subject + ". My message: " + emailtext + ". Sincerely, " + username + ". My email: " + email;
-        return true;
-      }
-
-      window.onload = function(){
-        document.getElementById('go').onclick = function() {
-          document.getElementById('formID').submit();
-          return true;
-        };
-      };
-
-      $(".org-main").empty();
-      $(".org-main").html("<h3 class='message-sent col-xs-12 col-sm-12 col-md-8 col-md-offset-2'>Your message was sent.</h3>");
     });
 
     // Collection of all existing missions
@@ -327,3 +302,21 @@ var addObject = function(organisation, email, field, country, header, message) {
 
   return newObj;
 };
+
+
+//Takes the user to chat page, still authorized.
+
+var ref = new Firebase("https://fro15-c4-webapp.firebaseio.com");
+$("#chat").on("click", function() {
+  event.preventDefault();
+  window.location.replace("chat.html");
+  console.log("opened chat page");
+  if (authData) {
+  console.log("inloggad");
+}
+else {
+  console.log("inte inloggad");
+  window.location.replace("index.html");
+}
+
+});
