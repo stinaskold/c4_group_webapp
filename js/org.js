@@ -15,10 +15,12 @@ $("#log-out").click(function() {
 
 // Hide message-div
 $("#org-message-div").hide();
+$("#message-sent").hide();
 
 // Show messages
 $("#show-messages").click(function() {
   $("#org-form-div").hide();
+  $("#message-sent").hide();
   $("#org-message-div").show();
 
   // Collection of all existing missions
@@ -57,7 +59,6 @@ $("#show-messages").click(function() {
     messageCollection = messageCollection.filter(function(filteredMessages){
        return filteredMessages.u == user;
     });
-
     addMessages();
   }
 
@@ -66,95 +67,91 @@ $("#show-messages").click(function() {
   // the input fields the organisation will fill in and send
   function addMessages() {
 
-      // Loop through all existing mission from the collection of missions
-      for (i = 0; i < messageCollection.length; i++) {
+    var missionsListDiv = document.getElementById('org-message-div');
+    missionsListDiv.innerHTML = "";
 
-        header = messageCollection[i].h;
-        message = messageCollection[i].m;
+    // Loop through all existing mission from the collection of missions
+    for (i = 0; i < messageCollection.length; i++) {
 
-        var missionsListDiv = document.getElementById('org-message-div');
-        var missionPanel = document.createElement("div");
-            missionPanel.className = "mission-panel panel panel-default";
-        var panelBody = document.createElement("div");
-            panelBody.className = "panel-body";
-        var missionHeader = document.createElement("h2");
-            missionHeader.className = "mission-header";
-        var missionText = document.createElement("p");
-            missionText.className = "mission-text";
-        var missionButtonsDiv = document.createElement("div");
-            missionButtonsDiv.className = "mission-buttons navbar-right";
-        var editBtn = document.createElement("button");
-            editBtn.className = "edit btn btn-default btn-sm";
-        var deleteBtn = document.createElement("button");
-            deleteBtn.className = "delete btn btn-default btn-sm";
-            editBtn.id = i;
-            deleteBtn.id = i;
+      header = messageCollection[i].h;
+      message = messageCollection[i].m;
 
-        missionsListDiv.appendChild(missionPanel);
-        missionPanel.appendChild(panelBody);
-        panelBody.appendChild(missionHeader);
-        missionHeader.innerHTML = header;
-        panelBody.appendChild(missionText);
-        missionText.innerHTML = message;
-        panelBody.appendChild(missionButtonsDiv);
-        missionButtonsDiv.appendChild(editBtn);
-        editBtn.innerHTML = "Edit";
-        missionButtonsDiv.appendChild(deleteBtn);
-        deleteBtn.innerHTML = "Delete";
-      }
+      var missionPanel = document.createElement("div");
+          missionPanel.className = "mission-panel panel panel-default";
+      var panelBody = document.createElement("div");
+          panelBody.className = "panel-body";
+      var missionHeader = document.createElement("h2");
+          missionHeader.className = "mission-header";
+      var missionText = document.createElement("p");
+          missionText.className = "mission-text";
+      var missionButtonsDiv = document.createElement("div");
+          missionButtonsDiv.className = "mission-buttons navbar-right";
+      var editBtn = document.createElement("button");
+          editBtn.className = "edit btn btn-default btn-sm";
+      var deleteBtn = document.createElement("button");
+          deleteBtn.className = "delete btn btn-default btn-sm";
+          editBtn.id = i;
+          deleteBtn.id = i;
 
-      // Add event listerner for button Delete
-      $(".delete").on('click',function (e) {
-        //e.stopImmediatePropagation();
-        var missionClickedID = this.id;
+      missionsListDiv.appendChild(missionPanel);
+      missionPanel.appendChild(panelBody);
+      panelBody.appendChild(missionHeader);
+      missionHeader.innerHTML = header;
+      panelBody.appendChild(missionText);
+      missionText.innerHTML = message;
+      panelBody.appendChild(missionButtonsDiv);
+      missionButtonsDiv.appendChild(editBtn);
+      editBtn.innerHTML = "Edit";
+      missionButtonsDiv.appendChild(deleteBtn);
+      deleteBtn.innerHTML = "Delete";
+    }
 
-        var missionDelete = document.getElementsByClassName('mission-panel')[missionClickedID];
-        document.getElementById('org-message-div').removeChild(missionDelete);
+    // Add event listerner for button Delete
+    $(".delete").on('click',function (e) {
+      //e.stopImmediatePropagation();
+      var missionClickedID = this.id;
 
-        key = messageCollection[missionClickedID].key;
-        var missionsRef = new Firebase("https://fro15c4webappgroup.firebaseio.com/missioninfo");
-        missionsRef.child(key).remove();
+      var missionDelete = document.getElementsByClassName('mission-panel')[missionClickedID];
+      document.getElementById('org-message-div').removeChild(missionDelete);
 
-      });
+      key = messageCollection[missionClickedID].key;
+      var missionsRef = new Firebase("https://fro15c4webappgroup.firebaseio.com/missioninfo");
+      missionsRef.child(key).remove();
+    });
 
+    // Add event listerner for button Edit
+    $(".edit").on('click',function (e) {
+      //e.stopImmediatePropagation();
+      var missionClickedID = this.id;
 
-      // Add event listerner for button Edit
-      $(".edit").on('click',function (e) {
-        //e.stopImmediatePropagation();
-        var missionClickedID = this.id;
+      $(this).text("Save");
+      $(this).attr("id","save-btn");
 
-        $(this).text("Save");
-        $(this).attr("id","save-btn");
+      text = this.parentNode.previousSibling;
+      head = text.previousSibling;
+      text.contentEditable = "true";
+      text.focus();
+      head.contentEditable = "true";
 
-        text = this.parentNode.previousSibling;
-        head = text.previousSibling;
-        text.contentEditable = "true";
-        text.focus();
-        head.contentEditable = "true";
-        //head.focus();
+      $("#save-btn").on('click',function (e) {
 
-        $("#save-btn").on('click',function (e) {
+          $(this).text("Edit");
+          $(this).attr("id","");
+          text = this.parentNode.previousSibling;
+          head = text.previousSibling;
 
-            $(this).text("Edit");
-            $(this).attr("id","");
-            text = this.parentNode.previousSibling;
-            head = text.previousSibling;
+          var missionsRef = new Firebase("https://fro15c4webappgroup.firebaseio.com/missioninfo");
+          key = messageCollection[missionClickedID].key;
+          header = head.innerHTML;
+          message = text.innerHTML;
+          missionsRef.child(key).update({header: header, message: message});
 
-            var missionsRef = new Firebase("https://fro15c4webappgroup.firebaseio.com/missioninfo");
-            key = messageCollection[missionClickedID].key;
-            header = head.innerHTML;
-            message = text.innerHTML;
-            missionsRef.child(key).update({header: header, message: message});
+          text.contentEditable = "false";
+          head.contentEditable = "false";
 
-            text.contentEditable = "false";
-            head.contentEditable = "false";
-
-          });
-      });
-
+        });
+    });
   }
-
-
   // $("#org-form-div").css("display", "none");
   // $("#org-message-div").css("display", "block");
   // $("#org-form-div").empty();
@@ -168,10 +165,10 @@ $("#show-messages").click(function() {
   // $("#org-message-div").html(html);
 });
 
-
 // Show message form
 $("#create-message").click(function() {
   $("#org-message-div").hide();
+  $("#message-sent").hide();
   $("#org-form-div").show();
   // $("#org-message-div").css("display", "none");
   // $("org-form-div").css("display", "block");
@@ -195,8 +192,6 @@ $("#create-message").click(function() {
   //            '<div class="messages"></div>' +
   //            '</div>';
   // $("#org-form-div").html(html);
-
-
 });
 
 // When clicking "send-message"-button get values from input fields and call function
@@ -217,7 +212,11 @@ document.querySelector("#send-message").addEventListener("click",function(){
 // Add message and userID to mission database
 function addMissionToDatabase(organisation, email, field, country, header, message, user){
     myFireBaseRef.child('missioninfo').push({organisation: organisation, email: email, field: field, country: country, header: header, message: message, user: user});
-    window.location.reload();
+    //window.location.reload();
+
+    $("#org-form-div input").val('');
+    $("#org-form-div").hide();
+    $("#message-sent").show();
 }
 
 // Function to create object array with missions info
