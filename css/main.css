@@ -97,7 +97,7 @@ a:active {color: #000; text-decoration: none !important;}
 
 		div.page-header {
 			background-color: white;
-			
+
 		}
 
     /*  Organisations-page   */
@@ -130,7 +130,7 @@ div.navbar.navbar-default {
 	margin: 0 0 0 0;
 	padding: 0 0 0 0;
 	background-color: white;
-	
+
 
 }
 
@@ -166,7 +166,7 @@ ul.nav li {
 .landing-page{
 		background:  #333333;
 
-		
+
 }
 
 .landing-page h1, .about-page h1 {
@@ -191,7 +191,7 @@ ul.nav li {
 	border: 3px solid white;
 	border-radius: 10px;
 	padding: 20px;
-	margin: 20px auto; 
+	margin: 20px auto;
 
 }
 
@@ -221,7 +221,7 @@ ul.nav li {
 
 .contact-page {
 	background-color: #333333;
-	
+
 }
 
 .about-text, .contact-text {
@@ -231,7 +231,7 @@ ul.nav li {
 	background-color:rgba(255,255,255,0.8);
 	border-radius: 10px;
 	padding: 20px;
-	
+
 
 }
 
@@ -372,7 +372,7 @@ footer p {
 	padding-top: 30px;
 	margin-top: 0px;
 	clear: both;
-	
+
 
 }
 
@@ -410,11 +410,11 @@ footer p {
 		background-color:rgba(255,255,255,0.8);
 		border-radius: 10px;
 		padding: 10px;
-		margin: 40px 20px 20px 30px; 
+		margin: 40px 20px 20px 30px;
 	}
 
 	.login-form {
-		margin: 40px 20px 20px 20px; 
+		margin: 40px 20px 20px 20px;
 	}
 
 	/* Registration form page */
@@ -425,7 +425,7 @@ footer p {
 		border: 3px solid white;
 		border-radius: 10px;
 		padding: 20px;
-		margin: 150px auto; 
+		margin: 150px auto;
 	}
 
 	/* Main header */
@@ -441,7 +441,7 @@ footer p {
 	    width: 70%;
 	    text-align: right;
 	    margin: 0;
-	    padding: 10px 0;;
+	    padding: 10px 0;
 	    > li {
 	      float: right;
 	      display: inline-block;
@@ -495,7 +495,7 @@ footer p {
 		border: 3px solid white;
 		border-radius: 10px;
 		padding: 20px;
-		margin: 30px 30px 30px 200px; 
+		margin: 30px 30px 30px 200px;
 	}
 
 	.landing-page h1, .about-page h1 {
@@ -522,7 +522,7 @@ footer p {
 	 	position: absolute;
 	 	top: 20px;
 	 	left: 35px;
-	 	
+
 	 	}
 
 	 ul.nav li {
