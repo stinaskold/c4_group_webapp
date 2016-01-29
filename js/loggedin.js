@@ -284,12 +284,13 @@ function addMissions() {
         document.getElementById('go').onclick = function() {
           document.getElementById('formID').submit();
           return true;
+
+          $(".org-main").val('');
+          $(".org-main").html("<h3 class='message-sent col-xs-12 col-sm-12 col-md-8 col-md-offset-2'>Your message was sent.</h3>");
         };
       };
-
-      $(".org-main").empty();
-      $(".org-main").html("<h3 class='message-sent col-xs-12 col-sm-12 col-md-8 col-md-offset-2'>Your message was sent.</h3>");
     });
+
 
     // Collection of all existing missions
     missionCollection = [];
