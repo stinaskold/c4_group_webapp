@@ -247,7 +247,7 @@ function addMissions() {
       missionText.innerHTML = message;
 
       var html = '<div class="org-main col-xs-12 col-sm-12 col-md-8 col-md-offset-2" style="margin-top:10px;">' +
-                   '<form name="input_form" id="formID" method="post" enctype="multipart/form-data" action="mailto:">' +
+                   '<form name="input_form" id="formID" method="post" enctype="multipart/form-data" action="mailto:" onsubmit="this.action=sendEmail();">' +
                      '<label for="" style="color: white;">Your Name</label><br>' +
                      '<input type="text" class="name" name="username" id="name" placeholder="Name"><br>' +
                      '<label for="" style="color: white;">Your Email</label><br>' +
@@ -256,12 +256,12 @@ function addMissions() {
                      '<input type="text" name="subject" class="header"><br>' +
                      '<label for="" class="textarea-message" style="color: white;">Message</label><br>' +
                      '<textarea class="message" rows="5" type="text" name="emailtext"></textarea><br>' +
-                     //'<input id="go" type="submit" value="Send message"><br>' +
+                     '<input id="go" type="submit" value="Send message"><br>' +
                    '</form>' +
-                   '<form id="formID" name="proxy_form" method="post" enctype="multipart/form-data" action="">' +
-                   '<input type="hidden" name="message_body"><br>' +
-                   '<input id="go" type="submit" value="Send message"><br>' +
-                   '</form>' +
+                   //'<form id="formID" name="proxy_form" method="post" enctype="multipart/form-data" action="">' +
+                   //'<input type="hidden" name="message_body"><br>' +
+                   //'<input id="go" type="submit" value="Send message"><br>' +
+                   //'</form>' +
                 '</div>';
 
       var messageFormDiv = document.createElement('div');
@@ -347,7 +347,7 @@ var ref = new Firebase("https://fro15-c4-webapp.firebaseio.com");
 $("#chat").on("click", function() {
   event.preventDefault();
   window.location.replace("chat.html");
-  console.log("opened chat page"); 
+  console.log("opened chat page");
   if (authData) {
   console.log("inloggad");
 }
@@ -356,8 +356,4 @@ else {
   window.location.replace("index.html");
 }
 
-}); 
-
-
-
-
+});
