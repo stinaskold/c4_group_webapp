@@ -2,9 +2,9 @@
 /////////////////
 ///Stinas kod
 
-    var usernameRef = new Firebase('https://fro15-c4-webapp.firebaseio.com/users/username');
-    //var username = usersRef.child("username").toString();
-    var test = usernameRef.child("username").toString();
+    // var usernameRef = new Firebase('https://fro15-c4-webapp.firebaseio.com/users/username');
+    // //var username = usersRef.child("username").toString();
+    // var test = usernameRef.child("username").toString();
   //   console.log(test);
   // usernameRef.on("value", function(snapshot) {
   // console.log(snapshot.val());
