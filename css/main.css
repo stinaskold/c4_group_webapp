@@ -300,6 +300,7 @@ ul.nav li {
 	margin: 0 auto;
 }
 
+
 #nameInput {
 	padding: 5px 64px 5px 5px;
 	margin-top: 10px;
@@ -309,7 +310,7 @@ ul.nav li {
 
 
 #messageInput {
-	padding: 5px 64px 50px 5px;
+	padding: 5px 64px 5px 5px;
 	margin-top: 10px;
 	border-radius: 5px;
 	border: none;
