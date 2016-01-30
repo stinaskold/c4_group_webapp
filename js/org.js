@@ -215,6 +215,7 @@ function addMissionToDatabase(organisation, email, field, country, header, messa
     //window.location.reload();
 
     $("#org-form-div input").val('');
+    $("#org-form-div textarea").val('');
     $("#org-form-div").hide();
     $("#message-sent").show();
 }
